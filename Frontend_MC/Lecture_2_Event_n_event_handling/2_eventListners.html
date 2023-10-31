@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        background-color: lightcoral;
+        border: 1px solid green;
+        height: 10rem;
+        width: 10rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box"></div>
+
+    <script>
+      /**ways to add event Listener
+       *  1. inline events:-for a given event you can only use it once.
+       *  That is if you have two onclick on box the last one will be executed
+       *  2. addEventListeners:-addEventListeners have multiple callbacks for a given event.If you have multiple
+       *  addEventListeners all of them will be executed.
+       *
+       *
+       */
+      //
+      let box = document.querySelector(".box");
+      /*********************1. inline******************/
+      // box.onclick = function () {
+      //   alert("i was clicked");
+      // };
+      // box.onclick = function () {
+      //   alert("I am fake");
+      // };
+      /*******************2.eventListener****************************/
+      box.addEventListener(
+        "click",
+        () => {
+          console.log("I was clicked");
+        },
+        { once: true }
+      );
+      box.addEventListener("click", () => {
+        console.log("I was fake");
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        box.addEventListener("click", cb, { once: true });
+      });
+
+      function cb() {
+        // append a h1 tag with Hi
+        let h1 = document.createElement("h1");
+        h1.textContent = "Hello";
+        document.body.appendChild(h1);
+      }
+    </script>
+  </body>
+</html>

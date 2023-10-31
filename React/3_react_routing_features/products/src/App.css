@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.nav_wrapper {
+  background-color: grey;
+  height: 7rem;
+}
+.search_sortWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.search_input {
+  height: 3rem;
+  width: 25rem;
+  margin-top: 3rem;
+}
+
+.product_wrapper {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-evenly;
+}
+
+.product {
+  border: 1px solid gray;
+  padding: 1rem;
+  text-align: center;
+  height: 18rem;
+  width: 20rem;
+  overflow-y: auto;
+}
+
+.product_image {
+  height: 200px;
+  aspect-ratio: 3/4;
+  text-align: center;
+}

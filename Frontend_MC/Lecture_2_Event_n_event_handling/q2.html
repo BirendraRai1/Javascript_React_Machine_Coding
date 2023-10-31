@@ -1,0 +1,47 @@
+<!-- Q - Use a single event handler(only one element should have event handler attached with it) and do the following:
+On clicking of the color name change the background color of the div.container to the same.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .container {
+        border: 1px solid;
+        height: 10rem;
+        width: 10rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="red">red</div>
+      <div class="blue">blue</div>
+      <div class="green">green</div>
+    </div>
+    <script>
+      //In your life you can add only one event listener
+      // where you use parent to accept the events of children.That pattern is known as event delegation
+      const parent = document.querySelector(".container");
+      parent.addEventListener("click", function (e) {
+        console.log("target", e.target.innerText);
+        console.log("currentTarget", e.currentTarget);
+        //const color = e.target.getAttribute("class");
+        //or
+        const color = e.target.innerText;
+
+        e.currentTarget.style.backgroundColor = color;
+        //or
+        //parent.style.backgroundColor=color
+      });
+    </script>
+  </body>
+</html>

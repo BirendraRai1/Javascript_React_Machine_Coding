@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- react -> algo efficiently modify our UI -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <!-- this libraray actually changes UI -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- BABEL ->JSX -> JS  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+      .set {
+        border-bottom: 1px solid;
+        padding-bottom: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function InputCounter() {
+        const [count, setCount] = React.useState(0);
+        // create a state var
+        const [value, setValue] = React.useState("");
+        // console.log("1");
+        const increment = () => {
+          console.log("Incremented");
+
+          setCount(count + 1);
+        };
+
+        const decrement = () => {
+          console.log("decremented");
+          setCount(count - 1);
+        };
+
+        const handleValue = (event) => {
+          // console.log("e.target.val", event.target.value);
+          setValue(event.target.value);
+        };
+
+        const handleChange = () => {
+          setCount(Number(value));
+          setValue("");
+        };
+        return (
+          <div>
+            <div className="set">
+              {/*input tag
+                    we are handling the ui update of input with state . In the way we are controlling it 
+                    */}
+              <input
+                type="number"
+                value={value}
+                onChange={handleValue}
+                placeholder="Number"
+              />
+
+              <button onClick={handleChange}>Set</button>
+            </div>
+            <button onClick={increment}>+</button>
+            <p>{count}</p>
+            <button onClick={decrement}>-</button>
+          </div>
+        );
+      }
+      // ReactDOM.render(
+      //   <InputCounter></InputCounter>,
+      //   document.getElementById("root")
+      // );
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        <InputCounter></InputCounter>
+      );
+    </script>
+  </body>
+</html>
+<!--
+    when we control UI change of elements like input using state then these components are 
+    known as controlled component
+    ​ In React, a controlled component is a component that 
+    is controlled by React state, while an uncontrolled 
+    component is a component that maintains its own 
+    internal state. A controlled component receives its 
+    current value and an update callback via props, and 
+    the parent component manages the state of the 
+    component
+  -->
+
+<!-- In React, controlled components refer to components that have their state and behavior controlled by the parent component. 
+    These components rely on props passed down from the parent component to update their state and behavior. 
+    Uncontrolled components refer to components that manage their own state internally. -->

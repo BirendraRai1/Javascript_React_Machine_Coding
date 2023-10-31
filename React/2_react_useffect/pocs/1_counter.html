@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- react -> algo efficiently modify our UI -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <!-- this libraray actually changes UI -->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- BABEL ->JSX -> JS  -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Counter() {
+        // -> useState(0) where 0 is the initial value
+        // arr[0]:-arr[0] is the state variable
+        // arr[1]:-arr[1] is the function to update state variable
+        //It is also known as hook
+        const [count, setCount] = React.useState(0); //here we are destructuring the count variable and function setCount
+        //or we can use it like this also
+        /* const arr = React.useState(0)
+         *   const count = arr[0];
+         *  const updateCount= arr[1];
+         *
+         *   const count=10;//we could have also used count=10 instead of useState but it does not call the function once again
+         * */
+        //
+        // when you call the function given by useState it changes the value and call the function once again
+        //or rerenders again leaving the useState wala part everything is rerendered again
+
+        console.log("1");
+        const increment = () => {
+          //please tell react update count by +1
+          console.log("Incremented");
+          // setCount(1000);
+          setCount(count + 1);
+        };
+        console.log("2");
+        const decrement = () => {
+          //please tell react update count by -1
+          console.log("decremented");
+          setCount(count - 1);
+        };
+        console.log("rendered");
+        return (
+          <div>
+            <button onClick={increment}>+</button>
+            <p>{count}</p>
+            <button onClick={decrement}>-</button>
+          </div>
+        );
+      }
+      //ReactDOM.render(<Counter></Counter>, document.getElementById("root"));
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        <Counter></Counter>
+      );
+    </script>
+  </body>
+</html>
+
+<!--
+   1. React.useState(0) takes inital value for state variable;
+   2. React.useState(0) returns an array of statevariable and a setterfn  
+   3 when you setterFN that is setCount is called it does two things:-
+        a. it updates your  state variable 
+        b. calls the component again that is it re-renders
+-->
+
+<!--It is for single component not for children component 
+    1.Create a static UI 
+    2.Add all the required eventListeners and handler function
+    3.To add state 
+-->

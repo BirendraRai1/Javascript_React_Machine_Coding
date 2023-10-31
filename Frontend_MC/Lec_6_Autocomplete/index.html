@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <!--
+## Problem statement 
+ We have to create Autocomplete/ Typeahead
+
+## Must Haves 
+
+* On typing inside the search box , 
+it should suggest related terms
+
+* use this api point to fetch the data : 
+https://restcountries.com/v3.1/name/{name}
+
+* user should be able to select one of the options
+
+## Good to Have 
+
+* search should be performant enough 
+* it should avoid unnecessary network call that means time after last keystroke before making API call.You should not change for every keystroke
+* it should persist previously fetched data
+* error scenario ? if api returns error
+
+
+## Scoping 
+* is there any design   
+* Data source
+    Interviewer will give you an api .You have to get data from there
+    or 
+    use some local data in the form of promise with certain delay
+* minimum number character after which the first search
+ should happen
+* should there be any defaults  
+  -->
+
+  <body>
+    <div class="autocomplete">
+      <h2>Auto complete</h2>
+      <input type="text" class="search_input" id="search_input" />
+      <ul id="suggestion_box" class="suggestion_box"></ul>
+    </div>
+    <script src="fetchData.js" type="module"></script>
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
+
+<!-- 
+JavaScript modules allow you to break up your code into separate files. 
+This makes it easier to maintain a code-base. 
+Modules are imported from external files with the import statement. 
+Modules also rely on type="module" in the <script> tag. -->

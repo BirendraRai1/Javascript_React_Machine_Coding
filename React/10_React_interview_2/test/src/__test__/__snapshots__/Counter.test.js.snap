@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`counter component test cases snapshot for counter 1`] = `
+<DocumentFragment>
+  <div
+    style="display: flex; justify-content: center; align-items: center; gap: 1rem;"
+  >
+    <button>
+      +
+    </button>
+    <p>
+      Count 0
+    </p>
+    <button>
+      -
+    </button>
+    <h1>
+      Hello
+    </h1>
+  </div>
+</DocumentFragment>
+`;

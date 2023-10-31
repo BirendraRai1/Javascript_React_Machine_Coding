@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- react is an algorithm to efficiently change your UI -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <!-- React DOM :-uses react to update the DOM-->
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- babel is a transpiler that converts JSX into javascript -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <!-- single Page applcation : JS -->
+    <script type="text/babel">
+      let statinoary = ["Pen", "Pencil", "Eraser", "Ruler"];
+      // let listItemsArr = [];
+      // for (let i = 0; i < statinoary.length; i++) {
+      //   console.log("came inside the for loop");
+      //   let listItem = <li key={i}>{statinoary[i]}</li>;
+      //   listItemsArr.push(listItem);
+      // }
+      //console.log("list items");
+      function List() {
+        //1st method
+        // return (
+        //   <div>
+        //     <h2>List Items</h2>
+        //     <ul>{listItemsArr}</ul>
+        //   </div>
+        // );
+        //2nd method
+        return (
+          <div>
+            <h2>List Items</h2>
+            {/** react spread the arrray -> li nodes
+             */}
+            <ul>
+              {statinoary.map((item, index) => {
+                return <li key={index}>{item}</li>;
+              })}
+            </ul>
+          </div>
+        );
+      }
+
+      //ReactDOM.render(<List></List>, document.getElementById("root"));
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        <List></List>
+      );
+    </script>
+  </body>
+</html>

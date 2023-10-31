@@ -1,0 +1,77 @@
+<!-- You're creating an online shopping website with a list of products.
+Implement Add to cart button by only adding a single event listener to achieve it
+
+Consider the following HTML structure: -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="productList">
+      <div class="product">
+        <h3>Product 1</h3>
+        <p>Price: $10</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Product 2</h3>
+        <p>Price: $20</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h3>Product 3</h3>
+        <p>Price: $30</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+    <script>
+      //1st way
+      // const parent = document.querySelector("#productList");
+      // parent.addEventListener("click", addToCart);
+      // function addToCart(e) {
+      //   console.log("e.target", e.target);
+      //   let targetElem = e.target;
+      //   let targetClass = targetElem.getAttribute("class");
+      //   console.log("targetClass is ", targetClass);
+      //   //    filter out stray(go away from the place where you should be) events
+      //   if (targetClass == "add-to-cart") {
+      //     // allow addinggetAttribute("class")
+      //     // console.log(e.target)
+      //     let p = e.target.parentElement.children[1];
+      //     let price = p.innerText;
+      //     console.log(`You have added ${price} to your cart`);
+      //   } else {
+      //     // nothing
+      //   }
+      // }
+
+      //2nd way
+      //  Event.target is already an element
+      //  If there is any other element inside that Then only you can do it
+      const parent = document.querySelector("#productList");
+      parent.addEventListener("click", addToCart);
+      function addToCart(e) {
+        console.log("e.target", e.target);
+        let targetElem = e.target;
+        let targetText = targetElem.innerText;
+        console.log("targetText is ", targetText);
+        //    filter out stray(go away from the place where you should be) events
+        if (targetText == "Add to Cart") {
+          // allow adding
+          // console.log(e.target)
+          let p = e.target.parentElement.children[1];
+          let price = p.innerText;
+          console.log(`You have added ${price} to your cart`);
+        } else {
+          // nothing
+        }
+      }
+    </script>
+  </body>
+</html>

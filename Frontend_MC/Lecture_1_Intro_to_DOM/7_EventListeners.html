@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <button>click Me</button>
+    <input type="text" />
+    <ul></ul>
+    <script>
+      // setup
+      const button = document.querySelector("button");
+      const ul = document.querySelector("ul");
+      const input = document.querySelector("input");
+      console.log("before");
+      // listening for input
+      //callbacks in event listener are asynchronous in nature which are sitting in web Api
+      document.addEventListener("DOMContentLoaded", function () {
+        button.addEventListener("click", cb);
+      });
+
+      function cb() {
+        // when you get the input
+        console.log("Between");
+        if (input.value) {
+          //we are using closure feature to access ul and input
+          //create
+          const li = document.createElement("li");
+          const value = input.value;
+          //add the content
+          li.innerText = value;
+          ul.appendChild(li);
+          input.value = "";
+        }
+      }
+      console.log("after");
+    </script>
+  </body>
+</html>

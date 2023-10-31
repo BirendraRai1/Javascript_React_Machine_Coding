@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>I am list</h1>
+    <ul></ul>
+
+    <script>
+      //  your task is to create an li element and insert text  make coffee
+      // 1st step is create element
+      let li = document.createElement("li");
+      //  add all the attributes . Inside the attributes we are also counting content
+
+      //li.textContent = "make coffee";
+      //or
+      li.innerText = "make coffee";
+
+      let ul = document.querySelector("ul");
+      //connect it to tree
+      ul.appendChild(li);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debounce_Throttle_Comparison</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <input type="text" />
+    <div class="div_section">
+      <b>Default:</b>
+      <span id="default"></span>
+    </div>
+    <div class="div_section">
+      <b>Debounce:</b>
+      <span id="debounce"></span>
+    </div>
+    <div class="div_section">
+      <b>Throttle:</b>
+      <span id="throttle"></span>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
+<!-- Async allows your script to run as soon as it's loaded, 
+    without blocking other elements on the page. 
+    Defer means your script will only execute after the page has finished loading. 
+    In most cases, async is the better option — but there are exceptions. -->
+
+<!-- when we want to send request like matrix to search in google in normal
+        case it sends six request m,ma,mat,matr,matri,matrix which causes a heavy request which
+        we don't want this can be controlled using debouncing -->
+
+<!-- In similar case throttling is used when we want to scroll on mouse or resizing a window or mouse move -->

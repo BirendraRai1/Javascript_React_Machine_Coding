@@ -1,0 +1,320 @@
+/* *************************/
+/* generic css */
+body {
+
+    overflow-x: hidden;
+    width: 100vw;
+    /* fonts */
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.nav_container,
+.hero_showcase,
+.features_container,
+.ways_to_save,
+.hero_nav {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 3rem;
+
+}
+
+.hero_intro,
+.features {
+    position: relative;
+    z-index: 3;
+    background-color: white;
+}
+
+.btn {
+    padding: .5rem .8rem;
+    background-color: #0071e3;
+    color: white;
+    border-radius: 980px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    border: 0px;
+}
+
+/************navbar section**************/
+h3 {
+    font-size: 1.2rem;
+    line-height: 1.14286;
+    font-weight: 600;
+    letter-spacing: .011em;
+}
+
+nav {
+    border-bottom: solid 2px rgba(200, 196, 196, 0.765);
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.nav_container {
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu_wrapper {
+    display: flex;
+    gap: 1.2rem;
+    height: 100%;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -.01em;
+}
+
+.menu_wrapper--ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.overview_text {
+    opacity: 0.56;
+}
+
+/* main section */
+/********************ribbon container******/
+.ribbon_container {
+    background-color: #f5f5f7;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+}
+
+.ribbon_para {
+    color: #1d1d1f;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    letter-spacing: .014em;
+    /* to center text */
+    text-align: center;
+}
+
+.ribbon_para span {
+    color: #0071e3;
+}
+
+
+/* ****************hero_nav*************/
+.hero_nav {
+
+    margin-top: 1rem;
+    height: 3rem;
+    /* background-color: lightblue; */
+    
+    
+    position: sticky;
+    top: 3.5rem;
+    z-index: 4;
+}
+
+.hero_nav--container {
+    display: flex;
+    gap: 0.3rem;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%
+}
+
+.color_picker {
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: gray;
+    border-radius: 50%;
+
+}
+
+.color_picker.midnight {
+    background-color: #31353a;
+}
+
+.color_picker.starlight {
+    background-color: #f0ece8;
+    /* border: 0.5px solid rgba(128, 128, 128, 0.522)  */
+}
+
+.color_picker.red {
+    /* background-color: black; */
+    background-color: #e11c2a;
+
+}
+
+.color_picker.blue {
+    /* background-color: black; */
+    background-color: #c0cfde;
+}
+
+.color_picker.purple {
+    /* background-color: black; */
+    background-color: #e7d7e9;
+
+}
+
+.color_picker.yellow {
+    /* background-color: black; */
+    background-color: #f5e488;
+
+}
+
+.selected--color {
+    border: 4px solid #699cd0;
+    height: 1.3rem;
+    width: 1.3rem;
+
+}
+
+/**********hero showcase section*********** */
+.hero {
+    position: relative;
+    top: -3.5rem;
+}
+
+.hero_showcase--header {
+    font-size: 4.3rem;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *******hero intro*******/
+.hero_intro {
+    padding: 4.5rem 0;
+    text-align: center;
+    color: #1d1d1f;
+}
+
+.intro_headline,
+.ways_to_save--header {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.hero_intro--para {
+    font-size: 1.1rem;
+    line-height: 1.4211026316;
+    font-weight: 400;
+    letter-spacing: .04em;
+}
+
+.btn_large {
+    margin-top: 2rem;
+    transform: scale(1.5);
+}
+
+/* features section */
+.features_container {
+    display: grid;
+    grid-auto-rows: 18.82rem;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 20px;
+    grid-template-areas:
+        "iphone_sizes iphone_sizes iphone_battery"
+        "iphone_sizes iphone_sizes ceramic_shield"
+        "water_resistance action_mode action_mode"
+        "bionic_chip pro_camera pro_camera"
+        "super_speed pro_camera pro_camera"
+        "emergency_sos emergency_sos crash_detection"
+        "personalization personalization selfies"
+        "personalization personalization selfies"
+}
+
+.init_card {
+    background-color: rgb(246, 241, 241);
+    border-radius: 25px;
+}
+
+.iphone_sizes {
+    grid-area: iphone_sizes;
+}
+
+.iphone_battery {
+    grid-area: iphone_battery;
+}
+
+.ceramic_shield {
+    grid-area: ceramic_shield;
+}
+
+.water_resistant {
+    grid-area: water_resistance;
+}
+
+.action_mode {
+    grid-area: action_mode
+}
+
+.bionic_chip {
+    grid-area: bionic_chip
+}
+
+.pro_camera {
+    grid-area: pro_camera
+}
+
+.super_speed {
+    grid-area: super_speed;
+}
+
+.emergency_sos {
+    grid-area: emergency_sos;
+}
+
+.crash_detection {
+    grid-area: crash_detection;
+}
+
+.personalization {
+    grid-area: personalization
+}
+
+.selfies {
+    grid-area: selfies;
+}
+
+/* *******features*********** */
+.ways_to_save--header {
+    font-size: 3rem
+}
+
+.ways_to_save--container {
+    padding: 4rem 0;
+    width: 100%;
+}
+
+.card_group {
+    width: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, 16rem);
+    justify-content: space-evenly;
+}
+
+.card_child {
+    background-color: rgb(246, 241, 241);
+    padding: 1rem;
+}
