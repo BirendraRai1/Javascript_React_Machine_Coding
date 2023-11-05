@@ -4,7 +4,7 @@ it is an promise based API*/
  * Fetch API request ->
  * *  Here we are getting GET request and this get request gives you response object
  * * response object is composed of header (metadata)+body(actual data)
- *      * To extarct actual data you have to call response.json() and
+ *      * To extract actual data you have to call response.json() and
  *       this fn is also promise based
  * * The route in fetch request should be public , or you should be authenticated
  * */

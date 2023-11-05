@@ -32,12 +32,12 @@
         //or we can use it like this also
         /* const arr = React.useState(0)
          *   const count = arr[0];
-         *  const updateCount= arr[1];
+         *  const setCounts= arr[1];
          *
          *   const count=10;//we could have also used count=10 instead of useState but it does not call the function once again
          * */
         //
-        // when you call the function given by useState it changes the value and call the function once again
+        // when you call the function given by useState hook it changes the value and call the function once again
         //or rerenders again leaving the useState wala part everything is rerendered again
 
         console.log("1");
@@ -73,7 +73,7 @@
 <!--
    1. React.useState(0) takes inital value for state variable;
    2. React.useState(0) returns an array of statevariable and a setterfn  
-   3 when you setterFN that is setCount is called it does two things:-
+   3 when your setterFN that is setCount is called it does two things:-
         a. it updates your  state variable 
         b. calls the component again that is it re-renders
 -->

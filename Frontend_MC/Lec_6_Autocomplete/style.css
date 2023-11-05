@@ -36,6 +36,7 @@ li {
   height: 3rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .suggestion_box {

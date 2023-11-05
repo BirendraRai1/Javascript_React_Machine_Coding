@@ -22,6 +22,9 @@ function UseEffectCleanup() {
 
   function firstCb() {
     console.log("first useEffect");
+    return function () {
+      console.log("returning the first cleanup function");
+    };
   }
   //In this page focus on cleanUp function
   function secondCb() {
@@ -40,13 +43,13 @@ function UseEffectCleanup() {
     };
   }
   // 1st version -> only it's cb fn only once after first render
-  // useEffect(firstCb, []);
+  //useEffect(firstCb, []);
   /**
    * 2nd version -> it's cb fn is called after every render and re-render
    * cleanup function : it is called just before the next useEffect call
    */
 
-  useEffect(secondCb);
+  //useEffect(secondCb);
   /**
    * 3rd version ->
    * it's callback function is called after render and after the element changes it's value inside  the dependecy array
@@ -94,7 +97,7 @@ function Task(props) {
     };
   }
   useEffect(firstCb, []);
-  //firstCb cleanUp will be called only when the task is destroyed that is when we are deleteing the task from the taskList
+  //firstCb cleanUp function will be called only when the task is destroyed that is when we are deleteing the task from the taskList
   return (
     <li
       onClick={() => {

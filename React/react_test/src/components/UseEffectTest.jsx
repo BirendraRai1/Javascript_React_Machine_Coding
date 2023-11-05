@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 
 function UseEffectTest() {
   const [visible, setVisible] = useState(false);
-  useEffect(() => {
+  function firstUseEffect() {
     console.log("component mounted");
-    return () => {
+    return function () {
       console.log("component will unmount");
     };
-  }, []);
+  }
+  useEffect(firstUseEffect, []);
+  console.log("render is first called than useEffect");
   return (
     <div>
       <h1>App Component</h1>

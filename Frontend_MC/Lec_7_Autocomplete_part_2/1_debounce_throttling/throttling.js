@@ -59,3 +59,7 @@ setTimeout(() => {
 /*In simple words difference between throttling and debouncing is:-
 Throttling for first call and debouncing for latest result
 **/
+
+/*Throttling is useful in scenarios where you want to
+ *limit the frequency of a function's execution to a specified
+ *time interval****/

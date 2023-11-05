@@ -1,9 +1,9 @@
-/*   you have listen to three events 
-                click:-when someone clicks on the star give the rating 
-                        update star upto that level 
-                        update Rating count 
-                mouseover:-On mouseover we have to change the stars upto that 
-                level to yellow
+/*   you have to listen to three events 
+      click:-when someone clicks on the star give the rating 
+        update star upto that level 
+        update Rating count 
+        mouseover:-On mouseover we have to change the stars upto that 
+        level to yellow
  * edge cases
                 mouseleave:-on mouseleave move it to gray stars
 */
@@ -26,7 +26,7 @@ let pidx = 0;
  * We have saved memory on adding event listener to parent but the features of bubbling occurs and that
  * parent will only listen to the event when it bubbles through it.
  *
- * Edge case we need to handle is  only process the event coming from the start
+ * Edge case we need to handle is  only process the event coming from the star
  *
  * */
 
@@ -46,7 +46,7 @@ starContainer.addEventListener("mouseover", function (e) {
   let elem = e.target;
   let isrequired = elem.hasAttribute("idx");
   if (!isrequired) return;
-  let cidx = elem.getAttribute("idx"); //here we are not taking pidx because after hovering it because yellow upto that star and after mouseleave it does not change to gray
+  let cidx = elem.getAttribute("idx"); //here we are not taking pidx because after hovering it becomes yellow upto that star and after mouseleave it does not change to gray
   changeStars(cidx);
 });
 

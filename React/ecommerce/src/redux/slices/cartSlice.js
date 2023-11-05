@@ -26,7 +26,24 @@ const cartSlice = createSlice({
         // already present
         requiredProduct.indQuantity++;
       }
-      state.totalPrice += productToBeAdded.price;
+      //state.totalPrice += productToBeAdded.price;
+      let a = state.totalPrice;
+      let b = productToBeAdded.price;
+      let c = String(a).split(".")[1];
+      c = c == undefined ? 0 : c.length;
+      let d = String(b).split(".")[1];
+      d = d == undefined ? 0 : d.length;
+      let dec = c > d ? c : d;
+      let stringFormOfNumberToBeMultiplied = "1";
+      while (dec) {
+        stringFormOfNumberToBeMultiplied += "0";
+        dec--;
+      }
+      state.totalPrice =
+        (a * Number(stringFormOfNumberToBeMultiplied) +
+          b * Number(stringFormOfNumberToBeMultiplied)) /
+        Number(stringFormOfNumberToBeMultiplied);
+      console.log("state.totalPrice is ", state.totalPrice);
     },
 
     deleteFromCart: (state, action) => {
@@ -39,7 +56,23 @@ const cartSlice = createSlice({
         if (state.cartProducts[productIdx].indQuantity == 0)
           state.cartProducts.splice(productIdx, 1);
         state.cartQuantity--;
-        state.totalPrice -= productToBeDeleted.price;
+        let a = state.totalPrice;
+        let b = productToBeDeleted.price;
+        let c = String(a).split(".")[1];
+        c = c == undefined ? 0 : c.length;
+        let d = String(b).split(".")[1];
+        d = d == undefined ? 0 : d.length;
+        let dec = c > d ? c : d;
+        let stringFormOfNumberToBeMultiplied = "1";
+        while (dec) {
+          stringFormOfNumberToBeMultiplied += "0";
+          dec--;
+        }
+        state.totalPrice =
+          (a * Number(stringFormOfNumberToBeMultiplied) -
+            b * Number(stringFormOfNumberToBeMultiplied)) /
+          Number(stringFormOfNumberToBeMultiplied);
+        console.log("state.totalPrice is ", state.totalPrice);
       }
     },
   },

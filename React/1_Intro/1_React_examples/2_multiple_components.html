@@ -53,9 +53,12 @@
 
       //    code execution
       // a method in REACTDOM -> puts the returned HTML from componente in root element
-      ReactDOM.render(
-        <HELLOPARENT></HELLOPARENT>,
-        document.getElementById("root")
+      // ReactDOM.render(
+      //   <HELLOPARENT></HELLOPARENT>,
+      //   document.getElementById("root")
+      // );
+      ReactDOM.createRoot(document.getElementById("root")).render(
+        <HELLOPARENT></HELLOPARENT>
       );
     </script>
   </body>

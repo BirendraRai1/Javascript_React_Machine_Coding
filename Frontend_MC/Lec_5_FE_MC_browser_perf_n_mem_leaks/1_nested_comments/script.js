@@ -22,12 +22,18 @@ container.addEventListener("click", function (e) {
 });
 
 function createComment(e) {
-  //
-  console.log(e.target);
+  // <div class="comment-container">
+  //           <div class="comment-card">
+  //             <h3 class="comment_text">I am Good</h3>
+  //             <div class="reply">Reply</div>
+  console.log(
+    "e.target inside createComment is",
+    e.target.parentNode.children[0]
+  );
   const commentContainer = document.createElement("div");
   commentContainer.setAttribute("class", "comment-container");
   const input = e.target.parentNode.children[0];
-  // console.log(input.value)
+  console.log("input.value", input.value);
   commentContainer.innerHTML = ` <div class="comment-card">
             <h3 class="comment_text">${input.value} ? </h3><div class="reply">Reply</div>
         </div>`;
@@ -52,7 +58,10 @@ function createReplyInput(e) {
   replyContainer.appendChild(input);
   replyContainer.appendChild(button);
   fragment.appendChild(replyContainer);
-  console.log(e.target.parentNode);
+  console.log(
+    "e.target.parentNode inside createReplyInput",
+    e.target.parentNode
+  );
 
   e.target.parentNode.appendChild(fragment);
 }

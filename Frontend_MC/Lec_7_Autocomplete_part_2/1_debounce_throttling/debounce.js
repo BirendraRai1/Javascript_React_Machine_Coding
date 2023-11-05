@@ -47,3 +47,9 @@ Throttling for first call and debouncing for latest result
 /*Throttling: Perform specific action only once in a time window
 Debouncing: Perform action only after certain window and if input received in that window then window will be reset
 ****/
+
+/*Remember that debouncing is useful in scenarios
+ *where you want to delay the execution of a function
+ *until a certain amount of time has passed without
+ *additional calls
+ ******/

@@ -26,6 +26,11 @@ const populateSuggestionBox = (countryNameArr) => {
   countryNameArr.forEach((countryName) => {
     const li = document.createElement("li");
     li.innerText = countryName;
+    li.onclick = function () {
+      console.log("I am here");
+      inputBox.value = li.innerText;
+      suggestionBox.classList.remove("visible");
+    };
     fragment.appendChild(li);
   });
   suggestionBox.appendChild(fragment);
@@ -58,7 +63,10 @@ function debounce(fn, delay = 1000) {
     }, delay);
   };
 }
-//user starts an action that is typing hello.There was certain duration of time required to type hello . Debouncing says that we want to make sure that you have typed the input that you want to give.when you have given the input then only debouncing starts its work
+//user starts an action that is typing hello.
+//There was certain duration of time required to type hello .
+//Debouncing says that we want to make sure that you have typed the input that you want to give.
+//when you have given the input then only debouncing starts its work
 
 inputBox.addEventListener("input", debounce(handleSuggestions));
 

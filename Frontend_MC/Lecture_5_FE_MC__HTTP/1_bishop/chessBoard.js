@@ -1,6 +1,6 @@
 // if we are building a chessboard the first function is to build init function
 //This window event is called when all the html and css part are done
-window.addEventListener("load", function () {
+document.addEventListener("DOMContentLoaded", function () {
   let table = document.querySelector("#table");
   // chess grid creation
   for (let ri = 0; ri < 8; ri++) {
@@ -10,7 +10,7 @@ window.addEventListener("load", function () {
     for (let ci = 0; ci < 8; ci++) {
       let cell = document.createElement("td");
       cell.setAttribute("class", `box ${white == true ? "white" : "black"}`);
-      // cell.innerText = `${ri}-${ci}`;
+      //cell.innerText = `${ri}-${ci}`;
       cell.setAttribute("data-index", `${ri}-${ci}`);
       tr.appendChild(cell);
       white = !white;
@@ -22,11 +22,11 @@ window.addEventListener("load", function () {
   // how to indentify when someone hovers the cell
   table.addEventListener("mouseover", function (e) {
     console.log("e.target is ", e.target);
-    //To get we have to use e.target.dataset.index
+    //To get dataIndex we can also use e.target.dataset.index
     //To set it we have to use cell.setAttribute("data-index",${ri}-${ci})
-    console.log(e.target.dataset.index);
-    let dataIndex = e.target.dataset.index;
-    let [cRi, cCi] = e.target.dataset.index.split("-");
+    console.log("e.target is ", e.target.getAttribute("data-index"));
+    let dataIndex = e.target.getAttribute("data-index");
+    let [cRi, cCi] = dataIndex.split("-");
     // remove color from every  box;
     for (let i = 0; i < boxesArr.length; i++) {
       boxesArr[i].classList.remove("yellow");
@@ -47,7 +47,8 @@ window.addEventListener("load", function () {
     // console.log("40", storage);
     // color wherever dataIndex matches;
     for (let i = 0; i < boxesArr.length; i++) {
-      let cDataIndex = boxesArr[i].dataset.index;
+      //console.log("boxesArr[i] is ", boxesArr[i]);
+      let cDataIndex = boxesArr[i].getAttribute("data-index");
       if (storage[cDataIndex] == true) {
         // color it
         boxesArr[i].classList.add("yellow");
@@ -55,7 +56,7 @@ window.addEventListener("load", function () {
     }
   });
   function findBishopPath(cRi, cCi, storage) {
-    console.log("came here", cRi, cCi);
+    //console.log("came here", cRi, cCi);
     let directionArr = [
       [1, 1],
       [-1, 1],
@@ -67,7 +68,7 @@ window.addEventListener("load", function () {
       let c = directionArr[i][1];
       let row = parseInt(cRi);
       let col = parseInt(cCi);
-      console.log("r ", r + row, "c", c + col);
+      //console.log("r ", r + row, "c", c + col);
       while (r + row >= 0 && r + row < 8 && c + col >= 0 && c + col < 8) {
         //console.log("came inside while loop ", r + row, c + col);
         row = r + row;
