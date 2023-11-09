@@ -11,14 +11,14 @@ function Routing() {
       {/* No matter what the routes nav is always present */}
       <nav>
         <ul style={{ display: "flex", justifyContent: "space-evenly" }}>
-          <li>
+          <li style={{ listStyle: "none" }}>
             {/* These are examples of Link routes.Link is predefined */}
             <Link to="/home">Home Page </Link>
           </li>
-          <li>
+          <li style={{ listStyle: "none" }}>
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li style={{ listStyle: "none" }}>
             <Link to="/listing">Listing</Link>
           </li>
         </ul>
