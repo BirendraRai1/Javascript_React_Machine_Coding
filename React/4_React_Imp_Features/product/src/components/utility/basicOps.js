@@ -6,9 +6,6 @@ export default function basicOps(
   pageNum,
   pageSize
 ) {
-  if (products == null) {
-    return;
-  }
   /*************filtering -> hiding  products*************/
   //Since products is an object .Therefore filteredArr is also an object
   let filteredArr = products;

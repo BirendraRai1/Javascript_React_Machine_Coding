@@ -5,9 +5,7 @@ import counterSlice from "../../redux/slices/counterSlice";
 const actions = counterSlice.actions;
 function Counter() {
   // This function useSelector is used to get the inital state
-  const count = useSelector((store) => {
-    return store.counterState.count;
-  });
+  const count = useSelector((store) => store.counterState);
 
   // This is used to call any method from the reducer.Updation of state will be done by the dispatch
   const dispatch = useDispatch(); //this is the shop owner dispatch

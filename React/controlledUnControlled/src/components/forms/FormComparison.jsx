@@ -21,7 +21,7 @@ in html but in react js it gives below warning.It is not editable if we try to e
 ***/
 
 /*You provided a `value` prop to a form field without an `onChange` handler. 
-The value attribute in the input is treated as a prop and we know that props are readonly .we can see
+The value attribute in the input is treated as a prop and we know that props are readonly .we can 
 send here and there ,see but we cannot change the value .
 Instead of value if we changed to defaultValue then we can edit
 but how we can manage,display and store content inside defaultValue we cannot do .AtLast we need the help of state.

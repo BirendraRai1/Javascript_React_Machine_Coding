@@ -147,4 +147,10 @@ export default Home;
  *      2. Categories routes
  *
  *
+ *
+ * Context API is perfect for sharing small bits of information between components.
+ * On the other hand, Redux is more powerful and comes with helpful features that Context API doesn't have.
+ * It's great for managing big chunks of data and handling requests to APIs
+ *
+ *
  * **/

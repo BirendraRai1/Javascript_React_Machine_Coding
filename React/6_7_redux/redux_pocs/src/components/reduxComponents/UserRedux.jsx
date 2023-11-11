@@ -8,7 +8,7 @@ function UserRedux() {
     return store.userState;
   });
 
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
   const dispatch = useDispatch();
   //why do we still need useEffect??
   //because userRedux is the guy who will tell get my data after the first render
@@ -47,7 +47,6 @@ function UserRedux() {
   if (loading) {
     return (
       <>
-        {" "}
         {heading}
         <h3>...Loading</h3>
       </>
@@ -57,7 +56,6 @@ function UserRedux() {
   if (error) {
     return (
       <>
-        {" "}
         {heading}
         <h3>Error occurred</h3>
       </>

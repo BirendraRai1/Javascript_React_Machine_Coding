@@ -7,11 +7,11 @@ import UnControlledComponent from "./components/forms/UnControlledComponent";
 function App() {
   return (
     <>
-      <ParentComponent />
+      {/* <ParentComponent /> */}
       {/* <FormComparison></FormComparison> */}
       {/* <ControlledForm></ControlledForm> */}
       {/* <FormWithSingleHandler></FormWithSingleHandler> */}
-      {/* <UnControlledComponent></UnControlledComponent> */}
+      <UnControlledComponent></UnControlledComponent>
     </>
   );
 }

@@ -47,7 +47,6 @@ export const fetchUserMiddleWare =
       console.log("user", user);
       dispatch(action.userData(user));
     } catch (err) {
-      console.lo;
       dispatch(action.userError());
     }
   };

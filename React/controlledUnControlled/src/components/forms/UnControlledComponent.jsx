@@ -1,19 +1,32 @@
 import React, { useRef, useState } from "react";
 
 function UnControlledComponent() {
-  const refObject = useRef();
+  const nameInputRef = useRef(null);
+  const emailInputRef = useRef(null);
+  const passwordInputRef = useRef(null);
   function handleSubmit(e) {
     e.preventDefault(); //it is used to prevent it running from default behaviour of html
-    console.log("refObject is ", refObject.current.value);
+    //perform registration logic here
+    const name = nameInputRef.current.value;
+    const email = emailInputRef.current.value;
+    const password = passwordInputRef.current.value;
+    //Reset input fields
+    nameInputRef.current.value = "";
+    emailInputRef.current.value = "";
+    passwordInputRef.current.value = "";
+    console.log("inputs of form are as follows ", name, email, password);
   }
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label>First name:</label>
+        <input type="text" placeholder="Name" ref={nameInputRef} />
         <br />
-        <input type="text" ref={refObject} />
-        <button>Submit</button>
+        <input type="email" placeholder="Email" ref={emailInputRef} />
+        <br />
+        <input type="password" placeholder="Password" ref={passwordInputRef} />
+        <br />
+        <button type="submit">Register</button>
       </form>
     </>
   );
