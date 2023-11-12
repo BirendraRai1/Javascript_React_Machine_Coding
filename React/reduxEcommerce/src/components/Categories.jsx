@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
-import { usePaginationContext } from "../contexts/PaginationContext";
+import { useSelector, useDispatch } from "react-redux";
+import pageNumSlice from "../redux/slices/pageNumSlice";
+import currCategoriesSlice from "../redux/slices/currCategoriesSlice";
+const actions3 = pageNumSlice.actions;
+const actions4 = currCategoriesSlice.actions;
 
 function Categories(props) {
-  const { pageNum, pageSize, setPageNum, setPageSize } = usePaginationContext();
-  let { categories, setCurrCategory } = props;
+  const dispatch = useDispatch();
+  let { categories } = props;
   return (
     <>
       {categories.map((category, index) => {
@@ -12,8 +16,8 @@ function Categories(props) {
             className="category_option"
             key={index}
             onClick={() => {
-              setCurrCategory(category);
-              setPageNum(1);
+              dispatch(actions4.updateCurrCategory(category));
+              dispatch(actions3.fixedPage());
             }}
           >
             {category}

@@ -6,23 +6,26 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import basicOps from "../utility/basicOps";
-import { usePaginationContext } from "../contexts/PaginationContext";
-
+import { useSelector, useDispatch } from "react-redux";
+import categoriesSlice from "../redux/slices/categoriesSlice";
+import sortDirSlice from "../redux/slices/sortDirSlice";
+import pageNumSlice from "../redux/slices/pageNumSlice";
+import pageSizeSlice from "../redux/slices/pageSizeSlice";
+import currCategoriesSlice from "../redux/slices/currCategoriesSlice";
+const actions1 = categoriesSlice.actions;
+const actions2 = sortDirSlice.actions;
+const actions3 = pageNumSlice.actions;
+const actions4 = pageSizeSlice.actions;
+const actions5 = currCategoriesSlice.actions;
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [products, setProducts] = useState([]);
-  const {
-    pageNum,
-    pageSize,
-    setPageNum,
-    setPageSize,
-    sortDir,
-    setsortDir,
-    categories,
-    setCategories,
-    currCategory,
-    setCurrCategory,
-  } = usePaginationContext();
+  const dispatch = useDispatch();
+  const { categories } = useSelector((store) => store.categoriesState);
+  const { sortDir } = useSelector((store) => store.sortDirState);
+  const { pageNum } = useSelector((store) => store.pageNumState);
+  const { pageSize } = useSelector((store) => store.pageSizeState);
+  const { currCategory } = useSelector((store) => store.currCategoriesState);
 
   const object = basicOps(
     products,
@@ -48,7 +51,9 @@ function Home() {
       const resp = await fetch(`https://fakestoreapi.com/products/categories`);
       const categoriesData = await resp.json();
       console.log("line 30", ["All categories", ...categoriesData]);
-      setCategories(["All categories", ...categoriesData]);
+      dispatch(
+        actions1.categoriesUpdate(["All categories", ...categoriesData])
+      );
     })();
   }, []);
   console.log("currCategory is ", currCategory);
@@ -63,32 +68,28 @@ function Home() {
             value={searchTerm}
             onChange={(e) => {
               setSearchTerm(e.target.value);
-              setPageNum(1);
+              dispatch(actions3.fixedPage());
             }}
           />
           <ArrowUpwardIcon
             fontSize="large"
             style={{ color: "white" }}
             onClick={() => {
-              setsortDir(-1);
-              setPageNum(1);
+              dispatch(actions2.decreasingSort());
+              dispatch(actions3.fixedPage());
             }}
           ></ArrowUpwardIcon>
           <ArrowDownwardIcon
             fontSize="large"
             style={{ color: "white" }}
             onClick={() => {
-              setsortDir(1);
-              setPageNum(1);
+              dispatch(actions2.increasingSort());
+              dispatch(actions3.fixedPage());
             }}
           ></ArrowDownwardIcon>
         </div>
         <div className="categories_wrapper">
-          <Categories
-            categories={categories}
-            setCurrCategory={setCurrCategory}
-            setPageNum={setPageNum}
-          ></Categories>
+          <Categories categories={categories}></Categories>
         </div>
       </header>
       <main className="product_wrapper">
@@ -97,7 +98,7 @@ function Home() {
       <div className="pagination">
         <button
           onClick={() => {
-            setPageNum(pageNum - 1);
+            dispatch(actions3.decrementPage());
           }}
           disabled={pageNum == 1 ? true : false}
         >
@@ -106,7 +107,7 @@ function Home() {
         <div className="pagenum">{pageNum}</div>
         <button
           onClick={() => {
-            setPageNum(pageNum + 1);
+            dispatch(actions3.incrementPage());
           }}
           disabled={pageNum == totalPage ? true : false}
         >
