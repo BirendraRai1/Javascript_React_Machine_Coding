@@ -4,7 +4,7 @@ const ContextWrapper = React.createContext();
 function Context() {
   return (
     //2
-    <ContextWrapper.Provider value="Be safe">
+    <ContextWrapper.Provider value="Hi Hello">
       <GrandParent></GrandParent>
     </ContextWrapper.Provider>
   );
@@ -29,9 +29,12 @@ function Parent() {
     </>
   );
 }
+const useCustomHook = () => useContext(ContextWrapper);
 function Children() {
   //3
-  const message = useContext(ContextWrapper);
+  //const message = useContext(ContextWrapper);
+  //or
+  const message = useCustomHook();
   return (
     <>
       <h2> Children</h2>

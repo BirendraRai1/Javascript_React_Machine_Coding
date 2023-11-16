@@ -54,18 +54,19 @@ const obj = {
 
 function render(obj) {
   let element;
-  // if your type is string -> It is normal element
+  // if your type is string then it is normal element
 
   if (typeof obj.type === "string") {
     element = document.createElement(obj.type);
   }
-  // if you custom component -> call that fn with props
+  // if you have custom component then call that fn with props
 
   if (typeof obj.type === "function") {
     const props = obj["props"];
+    console.log("props inside the object function ", props);
 
     let elementObj = obj.type(props);
-    console.log(elementObj);
+    console.log("elementObj inside the function ", elementObj);
     return render(elementObj);
   }
   const props = obj.props;
@@ -82,7 +83,7 @@ function render(obj) {
             const textNode = document.createTextNode(innerChild);
             element.appendChild(textNode);
           } else {
-            const childElem = render(children[i]);
+            const childElem = render(innerChild);
             element.appendChild(childElem);
           }
         }
@@ -101,5 +102,5 @@ document.addEventListener("DOMContentLoaded", function () {
   const rootElem = document.querySelector("#root");
   const wholeApp = render(obj);
   console.log("whole app", wholeApp);
-  // rootElem.appendChild(wholeApp);
+  rootElem.appendChild(wholeApp);
 });

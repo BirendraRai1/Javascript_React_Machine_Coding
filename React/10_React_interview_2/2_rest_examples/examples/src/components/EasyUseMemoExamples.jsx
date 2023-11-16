@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 /*What is useMemo and why to use it?
- *How to use Memo with examples
+ *How to use useMemo with examples
  *useMemo is used to increase the performance of application
  *In React application in one file we write many functions.There are some functions
  *which are unnecessarly being called every time which are not required due to which our application
@@ -20,11 +20,13 @@ function EasyUseMemoExamples() {
   //Both calling of arrow function or normal function in case of multiply is multiply()
   const multiply = () => {
     console.log("*******************");
+    console.log("Came inside the normal multiply function");
     return add * 10;
   };
 
   const multiplication = useMemo(() => {
     console.log("*******************");
+    console.log("came inside the useMemo multiply function ");
     return add * 10;
   }, [add]); //This dependency array indicates that the function to be called when add variable is updated
   return (
@@ -61,3 +63,8 @@ function EasyUseMemoExamples() {
 }
 
 export default EasyUseMemoExamples;
+
+/*In summary, the useEffect hook is used to perform side effects in a React component, 
+while the useMemo hook is used to optimize the performance of a component by memoizing the results of a 
+calculation or function.
+*******/

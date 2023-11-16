@@ -10,8 +10,8 @@ function App() {
     // <Todo></Todo>
     // <GetData></GetData>
     // <UseEffectExamples></UseEffectExamples>
-    // <UseEffectCleanup></UseEffectCleanup>
-    <ResizeAwareComponent></ResizeAwareComponent>
+    <UseEffectCleanup></UseEffectCleanup>
+    // <ResizeAwareComponent></ResizeAwareComponent>
   );
 }
 

@@ -28,37 +28,11 @@ function CounterUseReducer() {
   const [count, dispatch] = useReducer(reducer, intialState);
   return (
     <>
-      <div style={{ color: "white" }}> {count} </div>
-      <button
-        onClick={() => {
-          dispatch("increment");
-        }}
-      >
-        Increment
-      </button>
-      <button
-        onClick={() => {
-          dispatch("decrement");
-        }}
-      >
-        Decrement
-      </button>
-      <button
-        onClick={() => {
-          dispatch("IncrementByFive");
-        }}
-      >
-        {" "}
-        +five{" "}
-      </button>
-      <button
-        onClick={() => {
-          dispatch("DecrementByFive");
-        }}
-      >
-        {" "}
-        -five{" "}
-      </button>
+      <div> {count} </div>
+      <button onClick={() => dispatch("increment")}>Increment</button>
+      <button onClick={() => dispatch("decrement")}>Decrement</button>
+      <button onClick={() => dispatch("IncrementByFive")}> +five </button>
+      <button onClick={() => dispatch("DecrementByFive")}> -five </button>
     </>
   );
 }

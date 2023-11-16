@@ -7,7 +7,7 @@ import React, { useState, useRef } from "react";
  *
  *
  *When we are clicking on the input we have focus on the input .When we are clicking on the Reset button the focus is lost which we don't want.
- *We want that the focus remains when the Reset button is clicked.We ca use refElement because we can manipulate the dom.In the input tag we have the ref element
+ *We want that the focus remains when the Reset button is clicked.We can use refElement because we can manipulate the dom.In the input tag we have the ref element
  ****************/
 function EasyUseRefExamples() {
   const [name, setName] = useState("Biru");

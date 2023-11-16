@@ -32,7 +32,7 @@ function EasyUseCallBackExamples() {
   //   };
   const Learning = useCallback(() => {
     //some operation
-    //console.log("came inside Learning");
+    console.log("came inside Learning of useCallBack");
   }, [count]); //count dependency array indicates that this function to be called only when we update count
   return (
     <>

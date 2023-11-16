@@ -8,9 +8,9 @@ import Context from "./poc/context/Context.jsx";
 import ThemeManger from "./poc/context/themes/ThemeManger.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <App />
+    {/* <App /> */}
     {/* <Routing></Routing> */}
-    {/* <Context></Context> */}
+    <Context></Context>
     {/* <ThemeManger></ThemeManger> */}
   </BrowserRouter>
 );

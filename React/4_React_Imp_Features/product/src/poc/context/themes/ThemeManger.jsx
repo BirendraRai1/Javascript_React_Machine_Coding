@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Header from "./Header";
 import Article from "./Article";
 import Footer from "./Footer";
@@ -24,6 +24,8 @@ function ThemeManger() {
     </ThemeWrapper.Provider>
   );
 }
+//This is a custom hook
+export const useTheme = () => useContext(ThemeWrapper);
 
 export default ThemeManger;
 

@@ -15,13 +15,18 @@ const UseCallbackConcept = () => {
     setItems((prevItems) => prevItems.filter((item) => item.id != itemId));
   };
 
-  const handleDelete = useCallback(
-    (itemId) => {
-      console.log("came only for the first time");
-      deletingItem(itemId);
-    },
-    [setItems]
-  ); //you have to pass dependency array also
+  const handleDelete = (itemId) => {
+    console.log("came only for the first time");
+    deletingItem(itemId);
+  };
+
+  // const handleDelete = useCallback(
+  //   (itemId) => {
+  //     console.log("came only for the first time");
+  //     deletingItem(itemId);
+  //   },
+  //   [setItems]
+  // ); //you have to pass dependency array also
   /*whenever you call onDelete state changes and whenever state changes except line 8 to 12 everything rerenders
   again it means your function will be given memory again.We are having the listItems that has the function onDelete that is calling state changes
   when called .when a function component is called or a function that is called if we have a variable or function
