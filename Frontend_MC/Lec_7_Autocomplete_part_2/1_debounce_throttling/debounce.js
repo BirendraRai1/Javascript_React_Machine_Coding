@@ -8,9 +8,7 @@ function debounce(fn, delay = 500) {
       clearTimeout(timeoutID);
     }
 
-    timeoutID = setTimeout(() => {
-      fn(...args);
-    }, delay);
+    timeoutID = setTimeout(() => fn(...args), delay);
   };
 }
 

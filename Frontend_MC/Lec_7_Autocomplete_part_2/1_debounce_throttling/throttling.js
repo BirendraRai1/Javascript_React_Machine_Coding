@@ -16,9 +16,7 @@ function throttle(fn, interval = 500) {
     shouldWait = true;
     // console.log(" 2Called fn first time");
     // console.log(" 2should Wait", shouldWait);
-    setTimeout(() => {
-      shouldWait = false;
-    }, interval);
+    setTimeout(() => (shouldWait = false), interval);
   };
 }
 

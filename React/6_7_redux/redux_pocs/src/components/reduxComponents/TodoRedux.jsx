@@ -20,7 +20,7 @@ function TodoRedux() {
   return (
     <>
       <h2>Todo</h2>
-      <div style={{ display: "flex" }}>
+      <div>
         <div className="inputBox">
           <input type="text" value={value} onChange={handleChange} />
           <button onClick={handleAddTask}>Submit</button>

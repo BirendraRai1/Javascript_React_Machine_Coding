@@ -12,19 +12,14 @@ function UserRedux() {
   const dispatch = useDispatch();
   //why do we still need useEffect??
   //because userRedux is the guy who will tell get my data after the first render
-  useEffect(() => {
-    dispatch(fetchUserMiddleWare);
-  }, []);
+  // useEffect(() => {
+  //   dispatch(fetchUserMiddleWare);
+  // }, []);
 
   //The below useEffect is used when we want to send params to the api to get dynamic data
-  // useEffect(
-  //   function () {
-  //     if (param != null) {
-  //       dispatch(fetchUserMiddleWare(param));
-  //     }
-  //   },
-  //   [param]
-  // );
+  useEffect(() => {
+    if (param != null) dispatch(fetchUserMiddleWare(param));
+  }, [param]);
 
   const handleParam = () => {
     dispatch(action.getParam(value));
