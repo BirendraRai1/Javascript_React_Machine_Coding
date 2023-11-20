@@ -4,15 +4,45 @@ const express = require("express");
 const fs = require("fs");
 const short = require("short-uuid"); //this package creates unique id
 const app = express();
+const fileExists = fs.existsSync("./dev-data.json");
+app.use(function (req, res, next) {
+  if (fileExists) next();
+  else {
+    res.status(404).json({
+      status: "failure",
+      message: "The file you are trying to read is not found",
+    });
+  }
+});
 
 // reading the content
+const strContent = fs.readFileSync("./dev-data.json", "utf-8");
+let userDataStore;
+let isJsonString = (str) => {
+  try {
+    JSON.parse(str);
+  } catch (e) {
+    return false;
+  }
+  return true;
+};
+app.use(function (req, res, next) {
+  if (isJsonString(strContent)) {
+    console.log("came here");
+    userDataStore = JSON.parse(strContent);
+    next();
+  } else {
+    res.status(400).json({
+      status: "failure",
+      message: "the file present does not contain JSON format",
+    });
+  }
+});
 
 app.get("/api/user", function (req, res) {
   try {
     console.log("I am inside  get method");
-    const strContent = fs.readFileSync("./dev-data.json", "utf-8");
     // console.log("strContent is", strContent);
-    const userDataStore = JSON.parse(strContent);
     if (userDataStore.length == 0) {
       throw new Error("No users are present");
     }
@@ -55,9 +85,7 @@ app.post("/api/user", function (req, res) {
   const id = short.generate();
   const userDetails = req.body;
   userDetails.id = id;
-  const strContent = fs.readFileSync("./dev-data.json", "utf-8");
   // console.log("strContent is", strContent);
-  const userDataStore = JSON.parse(strContent);
   userDataStore.push(userDetails);
   // adding user to the file
   const struserStore = JSON.stringify(userDataStore);
@@ -89,8 +117,6 @@ app.get("/api/user/:userId", function (req, res) {
 });
 
 app.patch("/api/user/:userId", function (req, res) {
-  const strContent = fs.readFileSync("./dev-data.json", "utf-8");
-  let userDataStore = JSON.parse(strContent);
   const id = req.params.userId;
   let flag = false;
   let obj = req.body;
@@ -115,8 +141,6 @@ app.patch("/api/user/:userId", function (req, res) {
   }
 });
 app.delete("/api/user/:userId", function (req, res) {
-  const strContent = fs.readFileSync("./dev-data.json", "utf-8");
-  let userDataStore = JSON.parse(strContent);
   const id = req.params.userId;
   let flag = false;
   //console.log("userDataStore in delete API is ", userDataStore);
@@ -141,9 +165,6 @@ app.delete("/api/user/:userId", function (req, res) {
 });
 
 function getUserByid(id) {
-  const strContent = fs.readFileSync("./dev-data.json", "utf-8");
-  // console.log("strContent is", strContent);
-  const userDataStore = JSON.parse(strContent);
   const user = userDataStore.find((user) => {
     return user.id == id;
   });
