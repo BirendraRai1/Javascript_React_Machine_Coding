@@ -7,6 +7,8 @@ import EasyUseRefExamples from "./components/EasyUseRefExamples";
 import CustomHook1 from "./components/CustomHook1";
 import CustomHook2 from "./components/CustomHook2";
 import DebounceInReact from "./components/DebounceInReact";
+import SecondDebounce from "./components/SecondDebounce";
+import ThrottlingInReact from "./components/ThrottlingInReact";
 function App() {
   return (
     <>
@@ -17,7 +19,9 @@ function App() {
       {/* <EasyUseRefExamples></EasyUseRefExamples> */}
       {/* <CustomHook1></CustomHook1> */}
       {/* <CustomHook2></CustomHook2> */}
-      <DebounceInReact></DebounceInReact>
+      {/* <DebounceInReact></DebounceInReact> */}
+      {/* <SecondDebounce></SecondDebounce> */}
+      <ThrottlingInReact></ThrottlingInReact>
     </>
   );
 }
