@@ -1,0 +1,35 @@
+/* @import url("https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap"); */
+* {
+  padding: 0;
+  margin: 0;
+}
+.body {
+  background: url("../img/bg.jpg");
+  min-height: 100vh;
+  background-size: 100vw 100vh;
+  /* vh means view port height of the device */
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#board {
+  /* linear-gradient() The linear-gradient() CSS function creates an image consisting of a progressive transition 
+  between two or more colors along a straight line */
+  background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+  /* vmin stands for viewport minimum. 
+  This unit is based on the smaller dimension of the viewport. 
+  If the viewport height is smaller than the width, the value of 1vmin will be equal to 1% of the viewport height*/
+  width: 90vmin;
+  height: 92vmin;
+  border: 2px solid black;
+  display: grid;
+  grid-template-rows: repeat(18, 1fr);
+  grid-template-columns: repeat(18, 1fr);
+}
+.head {
+  background-color: red;
+}
+.food {
+  background-color: purple;
+}

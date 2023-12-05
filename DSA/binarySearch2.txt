@@ -1,0 +1,36 @@
+Q1>array of n positive integer.Find maximum value of k
+such that all subArrays of length k, sum<=B
+
+Ans>Brute force //TimeComplexity O(n*k)
+function subArrayLength(arr,B){
+	let ans = 0
+	for(let k=1;k<=arr.length;k++){
+    if(checkSubArraySum(arr,k,B))
+       ans = k
+    else
+      return ans
+	}
+}
+
+function checkSubArraySum(arr,k,B){
+	let sum =0
+  for(let i=0;i<k;i++)
+  	sum+=arr[i]
+  if(sum>B){
+  
+  	return false
+  }
+  	
+  for(let j=k,i=1;j<arr.length;j++,i++){
+  	sum+=arr[j]-arr[i-1]
+    if(sum>B)
+    	return false
+  }
+  return true
+}
+
+let arr = [3,2,5,4,6,3,7,20]
+
+let B = 20
+
+console.log("ans ",subArrayLength(arr,B))
