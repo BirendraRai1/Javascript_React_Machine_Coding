@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Sockets</title>
+  </head>
+  <body>
+    <h1>Web Socket Examples</h1>
+    <input type="text" />
+    <button id="btn">send</button>
+    <button id="join_grp">Join group</button>
+    <button id="send_to_group">Send to group</button>
+    <ul></ul>
+    <button id="grp">create group</button>
+    <!-- This is the socket.io library needed for the client to make web socket enabled-->
+    <script
+      src="https://cdn.socket.io/4.7.2/socket.io.min.js"
+      integrity="sha384-mZLF4UVrpi/QTWPA7BjNPEnkIfRFn4ZEO3Qt/HFklTJBj/gBOV8G3HcKn4NfQblz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
