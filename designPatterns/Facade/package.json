@@ -1,0 +1,18 @@
+{
+  "name": "facade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "FacadePattern.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node FacadePattern.js",
+    "dev": "nodemon FacadePattern.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "nodemon": "^3.0.2"
+  }
+}
