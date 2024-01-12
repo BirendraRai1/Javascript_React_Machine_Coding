@@ -18,7 +18,7 @@ let ironMan = {
  * **/
 Function.prototype.myCall = function (requiredObj, ...args) {
   console.log("my call invoked ");
-  // console.log(this);
+  console.log(this);
   // fn we have to call
   const requiredFn = this;
   // call -> i want to call fn as it is part of the given object
@@ -28,10 +28,10 @@ Function.prototype.myCall = function (requiredObj, ...args) {
   // delete the added fn
   delete requiredObj.requiredFn;
 };
-// let peterTeamFN = cap.petersTeam;
+let peterTeamFN = cap.petersTeam;
 
 // // with which guy i am calling myCall -> polyfill
-// peterTeamFN.myCall(ironMan, "loki", "thor");
+peterTeamFN.myCall(ironMan, "loki", "thor");
 
 // // original
 // peterTeamFN.call(ironMan, "loki", "thor")
@@ -75,8 +75,8 @@ Function.prototype.myBind = function (requiredObj) {
 // // call it later
 // boundFn("loki", "thor");
 
-const myBounFn = cap.petersTeam.myBind(ironMan);
-myBounFn("loki", "thor");
+//const myBounFn = cap.petersTeam.myBind(ironMan);
+//myBounFn("loki", "thor");
 
 /***
  * 1. bind , call and apply -> are available on function
@@ -84,3 +84,7 @@ myBounFn("loki", "thor");
  * 3. object passed to bind,call and apply -> on which you fn is called
  *
  * **/
+
+/*what are higher order functions
+ *A function that accepts functions as argument and/or returns a function is known as higher order functions
+ **********/

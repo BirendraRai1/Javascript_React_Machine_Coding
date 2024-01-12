@@ -5,20 +5,20 @@
  * */
 
 /*fn definiton*/
-function fn() {
-  // code
-  console.log("Hi I am a fn");
-}
+// function fn() {
+//   // code
+//   console.log("Hi I am a fn");
+// }
 
 // /*fn behaves as an object*/
-fn.count = 0;
-fn.printCount = function () {
-  //adding a method to function
-  console.log("count is ", this.count);
-};
+// fn.count = 0;
+// fn.printCount = function () {
+//   //adding a method to function
+//   console.log("count is ", this.count); //here fn.printCount is a method don't assume it as a function .So it will take this from the current object
+// };
 
-console.log("count prop", fn.count);
-fn.printCount();
+// console.log("count prop", fn.count);
+// fn.printCount();
 // /********************************/
 // console.log(fn); //here we are logging the function
 // /*fn call here we execute the code inside the fn defintion */
@@ -51,19 +51,19 @@ fn.printCount();
  * */
 
 // function fn(param) {
-//     console.log("param is ", param); //[Function: param]
-//     const rValue = param();
-//     console.log("rValue is ", rValue);
-//     return "From outer fn";
+//   console.log("param is ", param); //[Function: param]
+//   const rValue = param();
+//   console.log("rValue is ", rValue);
+//   return "From outer fn";
 // }
-// // fn("Hello");
-// // fn([1, 2, 3, 4]);
-// // fn({ name: "Jasbir" });
+// fn("Hello");
+// fn([1, 2, 3, 4]);
+// fn({ name: "Jasbir" });
 // const outerFnRVal = fn(smaller);
 // console.log(outerFnRVal);
 // function smaller() {
-//     console.log(" I am smaller");
-//     return "hello";
+//   console.log(" I am smaller");
+//   return "hello";
 // }
 
 /**
@@ -71,16 +71,16 @@ fn.printCount();
  *          -> fn can also be returned from a function
  * */
 
-// function fn() {
-//   console.log(" I am fn I am returning a fn"); //1
-//   return function inner() {
-//     console.log("Returned from fn"); //2
-//   };
-// }
-//const Rval = fn();
+function fn() {
+  console.log(" I am fn I am returning a fn"); //1
+  return function inner() {
+    console.log("Returned from fn"); //2
+  };
+}
+const Rval = fn();
 // // console.log("Rval",Rval);
 // //console.log("Rval is " + Rval);
-// console.log("Rval", Rval()); //3
+console.log("Rval", Rval()); //3
 
 /**
  * functions are object . We can add properties or methods to it
@@ -117,27 +117,36 @@ let arr = [
 ];
 // console.log("arr", arr);
 // console.log(arr[5][2]);
-// console.log(arr[6]["name"]);//arr[6].name
+// console.log(arr[6]["name"]); //arr[6].name
 // arr[7]();
 
 /**
- * Arrays are object disguised as an array.key are numbers
- * */
+ * Arrays are object
+ */
+for (let key in arr) {
+  console.log("key : ", key, "value : ", arr[key]);
+}
+// console.log(arr[25]); // undefined
+// arr[30] = 600;
+// console.log("144", arr.length); //31
+// arr["Hello"] = 200; //it will not give an error.Because array is internally an object.here key is hello and value is 200
+// arr[75] = 800;
+// console.log("146", arr.length);bject disguised as an array.key are numbers
 
 /**traverse array*/
 // for (let key in arr) {
 //     console.log("key : ", key, "value : ", arr[key]);
 // }
 
-for (let key in arr) {
-  console.log("key : ", key, "value : ", arr[key]);
-}
-console.log(arr[25]); // undefined
-arr[30] = 600;
-console.log("144", arr.length); //31
-arr["Hello"] = 200; //it will not give an error.Because array is internally an object.here key is hello and value is 200
-arr[75] = 800;
-console.log("146", arr.length);
+// for (let key in arr) {
+//   console.log("key : ", key, "value : ", arr[key]);
+// }
+// console.log(arr[25]); // undefined
+// arr[30] = 600;
+// console.log("144", arr.length); //31
+// arr["Hello"] = 200; //it will not give an error.Because array is internally an object.here key is hello and value is 200
+// arr[75] = 800;
+// console.log("146", arr.length);
 // for (let key in arr) {
 //     console.log("key : ", key, "value : ", arr[key]);
 // }

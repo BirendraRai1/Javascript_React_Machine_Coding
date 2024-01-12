@@ -9,17 +9,17 @@
 // function fn() {
 //   /**
 //    * here you are taking the value from the current/local scope in case of x=20*/
-//   //var x = 20;
+//   var x = 20;
 //   console.log("c Value of x is ", x);
 // }
 
 // fn();
 
-//window.varName = "win";
+window.varName = "win";
 
 var varName = 10;
 var varName;
-/**Here it is defination of function b*/
+// /**Here it is defination of function b*/
 function b() {
   console.log("in b", varName);
 }
@@ -27,7 +27,7 @@ function b() {
 function fn() {
   var varName = 20;
   /**Here function b is called*/
-  b();
+  b(); //in b 10
   console.log(varName); //20
 }
 

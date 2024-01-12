@@ -1,5 +1,4 @@
 // console.log("Hello");
-
 // native object and a host object
 
 // Enviornment ->
@@ -19,9 +18,14 @@
 // };
 
 // cap.sayHi();
-// let sayHiAdd = cap.sayHi;
+// let sayHiAdd = cap.sayHi; //here we are assigning the function cap.sayHi to the sayHiAdd
 var firstName = "loki";
-// sayHiAdd();
+// sayHiAdd(); //here we are calling the function sayHiAdd
+// function sayHello() {
+//   console.log("hi from sayHello ", this.firstName);
+// }
+// sayHello();
+// console.log("window.firstName", window.firstName);
 // //global area
 // //gec -> var will go to global object
 // let firstVar = "created using let";
@@ -46,7 +50,7 @@ var firstName = "loki";
 //       console.log("49", this.firstName);
 //     };
 //     // EC by this kind of call -> window
-//     iAmInner(20);
+//     iAmInner(20); //since iAmInner is a function so it will take this from window
 //   },
 // };
 

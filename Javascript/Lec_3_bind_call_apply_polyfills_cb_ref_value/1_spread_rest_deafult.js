@@ -11,14 +11,14 @@
 
 /**
 // 
- * spread operator : copies value,ref from one array to another for only first level
+ * spread operator : copies value,ref from one array or object to another only for first level
  * 
  * */
 
 // assignment operator -> reference remain same
-// let arr = [1, 2, 3, 4, 5];
+//let arr = [1, 2, 3, 4, 5];
 
-// // arr2 and arr has the same reference
+// arr2 and arr has the same reference
 // let arr2 = arr;
 // arr2.pop();
 // arr2.push(100);
@@ -27,14 +27,16 @@
 
 // let arr = [1, 2, [3, 4], 4, 5];
 
-// // // spread copies value or refrence from one array to another array only for the first level
+// // spread copies value or refrence from one array or object to another array or object only for the first level
 // let arr2 = [...arr];
 // arr2.pop();
 // arr2.push(100);
-//let arr = [1, 2, [3, 4], 4, 5];
-//[value, value, ref, value, value];
-// arr2[2] = 100;
+// console.log("arr is", arr, "arr2 is", arr2);
+// let arr = [1, 2, [3, 4], 4, 5];
+// let arr2 = [...arr];
+// //[value, value, ref, value, value];
 // arr2[2][0] = 200;
+// arr2[2] = 100;
 // console.log("orginal arr", arr, "updated array", arr2);
 
 // let a=10;
@@ -51,8 +53,8 @@
 // let arr2 = [...arr];
 
 /****
- * rest -> It is used as parameter of function .
- *  use you to collect remianing parameters numbers of params .
+ * rest -> It is used as a parameter of function .
+ *  used  to collect remaining parameters numbers of params .
  * ***/
 
 function fn(param1, ...param2) {

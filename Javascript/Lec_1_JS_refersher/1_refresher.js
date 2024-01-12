@@ -9,8 +9,9 @@
 
 // Fact-1 default of JS -> always -> undefined
 
-// var myVar;
-// console.log("value of ", myVar);
+var myVar;
+console.log("value of ", myVar);
+console.log("typeof myVar ", typeof myVar);
 
 // Datatypes in JS
 // Primitive types -> number, string , null , undefined , boolean
@@ -51,7 +52,7 @@
 // // Fact-2 : JS -> just 10days -> netscape
 
 // //  it is a bug
-//console.log(typeof null);
+console.log("typeof null", typeof null);
 
 // typeof array -> object
 //console.log(typeof [1, 2, 3, 4]);

@@ -4,23 +4,23 @@
  * */
 
 // fn defintion
-// function fn() {
-//     console.log("Hi I am an fn");
-//     fn.count++;
-// }
+function fn() {
+  console.log("Hi I am an fn");
+  fn.count++;
+}
 /** add a property to fn*/
-// fn.count = 0;
-// fn();
+fn.count = 0;
+fn();
 // // fn();
 // /** method to a fn */
-// fn.showCount = function () {
-//     console.log("count on fn  is ", this.count);
-// }
-// fn.showCount();
+fn.showCount = function () {
+  console.log("count on fn  is ", this.count);
+};
+fn.showCount();
 
-// for (let key in fn) {
-//     console.log(key, ": ", fn[key]);
-// }
+for (let key in fn) {
+  console.log(key, ": ", fn[key]);
+}
 
 /*documentation -> function are the object that implements callable constructor
 /**Layman fn is an object that can also be called */
@@ -52,11 +52,16 @@ function smallerfn() {
   console.log("I am smaller");
 }
 // fn({ name: "Jasbir" });
-fn(smallerfn);
+// fn(smallerfn);
 
 /***HOF -> fn that accepts or returns a fn */
-// function HOF(cb) {
-//   console.log("Inside HOF");
-//   cb();
-// }
-// HOF(smallerfn);
+function HOF(cb) {
+  console.log("Inside HOF");
+  cb();
+}
+HOF(smallerfn);
+
+/******callback function*************/
+//A JavaScript callback is a function which is to be executed after another function has finished execution.
+//A more formal definition would be - Any function that is passed as an argument to another function
+//so that it can be executed in that other function is called as a callback function.

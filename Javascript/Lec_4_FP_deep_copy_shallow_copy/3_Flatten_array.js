@@ -15,12 +15,15 @@ function flatten(srcArr) {
     if (isElemArr) {
       // flatten it again
       let smalleFlattenArr = flatten(elem);
-      newArr.push(...smalleFlattenArr);
-      console.log("new arr inside if ", newArr);
+      console.log("smalleFlattenArr is", smalleFlattenArr);
+      //newArr.push(...smalleFlattenArr);
+      newArr = [...newArr, ...smalleFlattenArr];
+      //console.log("new arr inside if ", newArr);
     } else {
       //push it to newArr;
-      newArr.push(elem);
-      console.log("new arr inside else ", newArr);
+      //newArr.push(elem);
+      newArr = [...newArr, elem];
+      //console.log("new arr inside else ", newArr);
     }
   }
   return newArr;
@@ -43,44 +46,44 @@ console.log(flattenOutput);
  * flatten an object
  * */
 
-let person = {
-  firstName: "John",
-  lastName: "Doe",
-  objectArr: [9, { m: 5 }],
-  address: {
-    street: "North 1st street",
-    city: "San Jose",
-    state: "CA",
-    country: "USA",
-    postCodes: {
-      firstBlock: 10,
-      secondBlock: 12,
-      profile: {
-        home: 149,
-        area: "airport road",
-      },
-    },
-  },
-};
+// let person = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   objectArr: [9, { m: 5 }],
+//   address: {
+//     street: "North 1st street",
+//     city: "San Jose",
+//     state: "CA",
+//     country: "USA",
+//     postCodes: {
+//       firstBlock: 10,
+//       secondBlock: 12,
+//       profile: {
+//         home: 149,
+//         area: "airport road",
+//       },
+//     },
+//   },
+// };
 
-function flattenObject(obj) {
-  let result = {};
-  for (let key in obj) {
-    let elem = obj[key];
-    let isObject = typeof elem;
-    let isArray = Array.isArray(elem);
-    if (isObject == "object" && !isArray) {
-      let temp = flattenObject(obj[key]);
-      for (let j in temp) {
-        result[key + "." + j] = temp[j];
-      }
-    } else {
-      result[key] = obj[key];
-    }
-  }
-  return result;
-}
-console.log("flatten object ", flattenObject(person));
+// function flattenObject(obj) {
+//   let result = {};
+//   for (let key in obj) {
+//     let elem = obj[key];
+//     let isObject = typeof elem;
+//     let isArray = Array.isArray(elem);
+//     if (isObject == "object" && !isArray) {
+//       let temp = flattenObject(obj[key]);
+//       for (let j in temp) {
+//         result[key + "." + j] = temp[j];
+//       }
+//     } else {
+//       result[key] = obj[key];
+//     }
+//   }
+//   return result;
+// }
+// console.log("flatten object ", flattenObject(person));
 
 // person = {
 //   firstName: "John",

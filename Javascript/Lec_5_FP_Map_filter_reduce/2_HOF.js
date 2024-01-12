@@ -2,6 +2,12 @@
  * Problem : What is problem
  * What are HOF:-HOF are functions that take functions as an argument or return functions
  *  Different Inbuilt HOF
+ *
+ *
+ * what are callbacks?
+ * A callback is a function that is passed as
+ * an argument to another function and is called
+ * after the main function has finished its execution
  * */
 
 // let arr = [2, 3, 4, 5];
@@ -124,17 +130,22 @@ Array.prototype.myFilter = function (logic) {
 
 /*********************reduce******************/
 
-//let elems = [1, 2, 3, 4, 5];
+let elems = [6, 2, 3, 4, 5];
 
 // function sum(acc, elem) {
 //   return acc + elem;
 // }
-// function product(acc, elem) {
-//   return acc * elem;
-// }
+function product(acc, elem) {
+  console.log("acc is ", acc);
+  console.log("elem is ", elem);
+  return acc * elem;
+}
 
 // console.log("sum", sumValues);
-// const prodValues = elems.reduce(product);
+//const prodValues = elems.reduce(product);
+//const prodValues = elems.reduce((acc, elem) => acc * elem, [10]);
+//here passing 10 in the reduce is the default value which is optional
+// const prodValues = elems.reduce(product, [10]);
 // console.log("prod", prodValues);
 
 /***Intution polyfill of reduce**/
@@ -193,9 +204,9 @@ Array.prototype.myFilter = function (logic) {
 // let sortedArr = animals.sort();
 // console.log("sortedArr", sortedArr);
 
-// let numArr = [1, 2, 3, 4, 5, 11];
-// const sortedArr = numArr.sort();
-// console.log("sortedArr", sortedArr);
+let numArr = [1, 2, 3, 4, 5, 11];
+const sortedArr = numArr.sort();
+console.log("sortedArr", sortedArr);
 
 // function sortHelper(a, b) {
 //     /**increasing order*/

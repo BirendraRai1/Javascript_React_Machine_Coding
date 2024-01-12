@@ -5,16 +5,16 @@
  *  Closure is always formed on variable not on value
  * */
 /*******************Q1 based on closure************************/
-function outerFunction() {
-  let count = 0;
-  return function innerFunction() {
-    count++;
-    return count;
-  };
-}
-const innerFunc = outerFunction();
-console.log(innerFunc());
-console.log(innerFunc());
+// function outerFunction() {
+//   let count = 0;
+//   return function innerFunction() {
+//     count++;
+//     return count;
+//   };
+// }
+// const innerFunc = outerFunction();
+// console.log(innerFunc());
+// console.log(innerFunc());
 /*****
  * output 1 2
  * ****/
@@ -113,21 +113,21 @@ console.log(innerFunc());
  * ****/
 
 /************Q4.Based on currying*****************************/
-function getFirstName(firstName) {
-  console.log("I have got your first Name");
-  return function getLastName(lastName) {
-    console.log("I have got Your last Name");
-    return function greeter() {
-      console.log(`Hi I am ${firstName} ${lastName}`); // closure
-    };
-  };
-}
+// function getFirstName(firstName) {
+//   console.log("I have got your first Name");
+//   return function getLastName(lastName) {
+//     console.log("I have got Your last Name");
+//     return function greeter() {
+//       console.log(`Hi I am ${firstName} ${lastName}`); // closure
+//     };
+//   };
+// }
 
-const getLastName = getFirstName("Jasbir");
-console.log("1st Task in between");
-const greeter = getLastName("Singh");
-console.log("2nd Task in between");
-greeter();
+// const getLastName = getFirstName("Jasbir");
+// console.log("1st Task in between");
+// const greeter = getLastName("Singh");
+// console.log("2nd Task in between");
+// greeter();
 
 /*************Q5.Based on setTimeout********************/
 let a = 100;
@@ -141,3 +141,10 @@ console.log("After");
 
 /**GEC */
 /**should a exist -> no*/
+
+/*what is a closure in javascript
+*A closure is an inner function that has access to 
+the outer function's variables and parameters. 
+It allows the inner function to access and manipulate the outer function's variables, 
+even after the outer function has returned
+*********/

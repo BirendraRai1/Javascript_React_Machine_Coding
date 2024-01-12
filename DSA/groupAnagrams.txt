@@ -1,0 +1,21 @@
+Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+
+var groupAnagrams = function(strs) {
+    let hm = new Map()
+    let n = strs.length
+    if(n==0)
+        return [[""]]
+    for(let i=0;i<n;i++){
+        let word = strs[i].toLowerCase().split("").sort().join("")
+        if(hm.has(word))
+            hm.set(word,[...hm.get(word),strs[i]])
+        else
+            hm.set(word,[strs[i]])
+    }
+    return Array.from(hm.values())
+};

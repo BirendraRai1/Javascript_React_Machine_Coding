@@ -15,9 +15,9 @@
  * */
 
 /*****
- * shallow copy: shallow copy of an object/Array is a copy whose properties share the same references
- * (point to the same underlying values) as those of the source object from which copied
- * object is formed
+ *A shallow copy of an arrays or object is one where they both have
+ *the same reference in memory. That means that if you change the shallow copy,
+ *it may change the original copy too
  * shallow copy :
  *  value -> values will be copied and they have diff mem
  * references -> new references will be created but the values inside the reference will be pointing towards same location
@@ -27,7 +27,7 @@
 // let arr = [1, 2, 3, 4, [10, 12], 5, 6];
 // let spreadArray = [...arr];
 // spreadArray[2] = 100;
-// // spreadArray[4] = 200;
+// //spreadArray[4] = 200;
 // spreadArray[4][1] = 300;
 // console.log("outputs ", spreadArray, arr);
 
@@ -43,12 +43,19 @@
 //   },
 // };
 
+// let obj1 = {
+//   hobbies: "criket",
+//   movie: "govinda",
+// };
+
 ////The Object.assign() method is used to copy the values and properties from one or more source
 //objects to a target object
 //target: It is the target object to which values and properties have to be copied.
 //sources: It is the source object from which values and properties have to be copied.
+//Object.assign(target,source)
 
-// let copiedObject = Object.assign({}, person);
+// let copiedObject = Object.assign(obj1, person);
+// console.log("copiedObject before assigning ", copiedObject);
 // copiedObject.lastName = "Odinson";
 // copiedObject.address.street = "south 1st street";
 // console.log("person", person);
@@ -71,18 +78,17 @@
 //     country: "USA",
 //   },
 // };
-// // // convert obj to string
+// // // // convert obj to string
 // let stringSyntaxOfobject = JSON.stringify(person);
 // console.log(typeof stringSyntaxOfobject, stringSyntaxOfobject);
 // /**deep copy -> object like string*/
 //a deep copy shares no references with its source object, any changes made to the deep copy do not affect the source object.
 
 // let deepClonedObj = JSON.parse(stringSyntaxOfobject);
-
 // deepClonedObj.lastName = "Odinson";
 // deepClonedObj.address.street = "south 1st street";
 // console.log("person", person);
-// console.log("copiedObject", deepClonedObj);
+// console.log("deepClonedObj", deepClonedObj);
 
 let arr = [1, 2, 3, 4, [10, 12], 5, 6];
 let stringArr = JSON.stringify(arr);
@@ -96,9 +102,9 @@ console.log("outputs ", deepArr, arr);
 //  BottleNeck -> you write your own deep clone
 
 /*****
- * Shallow copying creates a new object with references
+ * Shallow copy creates a new object with references
  * to the same memory locations as the original object,
- * while deep copying creates a new object with new memory locations for all of its properties
+ * while deep copy creates a new object with new memory locations for all of its properties
  * and nested objects or arrays
  *
  * *******/

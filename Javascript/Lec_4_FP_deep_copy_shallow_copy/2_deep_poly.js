@@ -1,4 +1,5 @@
 // This object  -> copy of it
+//polyfill of deep copy of an object
 let person = {
   firstName: "John",
   lastName: "Doe",
@@ -34,11 +35,11 @@ function superClone(obj) {
   return newobj;
 }
 
-let deeplyClonedObj = superClone(person);
-deeplyClonedObj.lastName = "Odinson";
-deeplyClonedObj.address.street = "south 1st street";
-console.log("person", person);
-console.log("copiedObject", deeplyClonedObj);
+// let deeplyClonedObj = superClone(person);
+// deeplyClonedObj.lastName = "Odinson";
+// deeplyClonedObj.address.street = "south 1st street";
+// console.log("person", person);
+// console.log("deeplyClonedObject", deeplyClonedObj);
 
 // let person = {
 //     firstName: 'John',
@@ -50,3 +51,21 @@ console.log("copiedObject", deeplyClonedObj);
 //         country: 'USA'
 //     },
 // };
+
+let arr = [1, 2, 3, [4, 5], [6, 7, 8, [9, 10, 11]]];
+
+//polyfill of deep copy of an array
+function deepCopyArray(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    let isArray = Array.isArray(arr[i]);
+    if (isArray) {
+      let clonedArr = deepCopyArray(arr[i]);
+      newArr.push(clonedArr);
+    } else newArr.push(arr[i]);
+  }
+  return newArr;
+}
+let deepCopy = deepCopyArray(arr);
+deepCopy[3][1] = 100;
+console.log("arr is", arr, "deepCopy is", deepCopy);

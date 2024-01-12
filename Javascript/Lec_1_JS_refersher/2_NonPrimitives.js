@@ -6,9 +6,9 @@
 //   return "Returned value";
 // }
 // // fn call
-// let rVal = fn();
+//let rVal = fn();
 
-// console.log("return val", rVal);
+//console.log("return val", rVal);
 
 // linter -> eslint
 
@@ -35,11 +35,11 @@
 // //  JSON-> Javascript object Notation
 // // **********get******************
 // // .operator
-// console.log("name is ", cap.name);
+//console.log("name is ", cap.name);
 // // sqaure bracket
-// console.log("last name is ", cap["last Name"]);
+//console.log("last name is ", cap["last Name"]);
 
-// cap.sayHi();
+//cap.sayHi();
 
 let cap = {
   name: "Steve",

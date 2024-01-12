@@ -3,7 +3,7 @@
 // console.log(varName);
 
 //"use strict";
-//let varName = "loki";
+// let varName = "loki";
 // console.log(varName);
 /*****************question1***********************/
 // let cap = {
@@ -22,7 +22,7 @@
 // sayHiAdd();
 
 /*********************question 2***********/
-// "use strict";
+//"use strict";
 // //var firstName = "lokiThar";
 // let cap = {
 //   firstName: "Steve",
@@ -37,10 +37,10 @@
 // };
 
 // // EC by this -> ?? -> cap
-// cap.sayHi();
+//cap.sayHi();
 
 // ***************question 3***************//
-// "use strict";
+//"use strict";
 
 // let cap = {
 //   firstName: "Steve",
