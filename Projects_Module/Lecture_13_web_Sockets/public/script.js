@@ -5,7 +5,7 @@ const socket = io("http://localhost:3000"); //here we are getting the io object 
 //here using socket.on we are listening to the event emmitted from the server
 //event based architecture is very important without which your socket io will not work
 socket.on("message from the server", function () {
-  console.log("I am connected to the socket");
+  alert("I am connected to the socket");
 });
 
 const btn = document.querySelector("#btn");
@@ -26,10 +26,14 @@ btn.addEventListener("click", function () {
   }
 });
 
+//when create group button is clicked it simply emits an event to create a group with that it
+//generates a random id to pass that id on server side to create a room
 grp.addEventListener("click", function () {
   console.log("group created request");
   socket.emit("create_grp", Math.random(0, 1) * 1000);
 });
+
+//someone also wants to join the room.They will click the joinGroup button and join_room event will be emitted
 
 joinGrp.addEventListener("click", function () {
   console.log("grp join request");

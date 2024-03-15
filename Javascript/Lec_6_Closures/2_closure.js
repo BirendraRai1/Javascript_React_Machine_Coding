@@ -79,7 +79,7 @@
 // const lnNameRtrn = fnNameRtrn("Singh");
 // console.log("lnNameRtrn", lnNameRtrn); // greeter
 
-//getFirstName("Jasbir")("Singh")();
+// getFirstName("Jasbir")("Singh")();
 //or
 //lnNameRtrn();
 

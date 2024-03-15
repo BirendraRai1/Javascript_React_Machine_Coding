@@ -54,20 +54,36 @@
  *
  * */
 
+// const fs = require("fs");
+// // //1
+// console.log("Before");
+// // // fs.readFile is called and moved to node API area
+// fs.readFile("./f1.txt", f1cb);
+// function f1cb(err, data) {
+//   let content1 = data;
+//   fs.readFile("./f2.txt", f2cb);
+//   function f2cb(err, data) {
+//     let content2 = data;
+//     //give the concatenated output
+//     console.log("" + content1 + " " + content2);
+//   }
+// }
+// // //3
+// console.log("after");
+
+// or Another way of writing above code
 const fs = require("fs");
 // //1
 console.log("Before");
 // // fs.readFile is called and moved to node API area
-fs.readFile("./f1.txt", f1cb);
-function f1cb(err, data) {
+fs.readFile("./f1.txt", (err, data) => {
   let content1 = data;
-  fs.readFile("./f2.txt", f2cb);
-  function f2cb(err, data) {
+  fs.readFile("./f2.txt", (err, data) => {
     let content2 = data;
     //give the concatenated output
     console.log("" + content1 + " " + content2);
-  }
-}
+  });
+});
 // //3
 console.log("after");
 /***

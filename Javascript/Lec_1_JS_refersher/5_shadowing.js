@@ -1,3 +1,17 @@
+// var fruits = "apple";
+// console.log("21", fruits); // apple
+// {
+//   let fruits;
+//   fruits = "orange";
+//   console.log("25", fruits);
+//   {
+//     let fruits;
+//     console.log("28", fruits);
+//   }
+//   console.log(fruits);
+// }
+// console.log(fruits);
+
 // let fruits = "apple";
 // console.log(fruits); // apple
 
@@ -14,27 +28,13 @@
 
 // console.log(fruits);
 
-//  legal
+//  fruits was used before it was declared which is illegal for let variables
 // let fruits = "apple";
 // console.log("21", fruits); // apple
 // {
 //   let fruits;
 //   console.log("25", fruits);
 //   fruits = "orange";
-//   {
-//     let fruits;
-//     console.log("28", fruits);
-//   }
-//   console.log(fruits);
-// }
-// console.log(fruits);
-
-// var fruits = "apple";
-// console.log("21", fruits); // apple
-// {
-//   let fruits;
-//   fruits = "orange";
-//   console.log("25", fruits);
 //   {
 //     let fruits;
 //     console.log("28", fruits);

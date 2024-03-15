@@ -9,6 +9,8 @@ import { Route, Routes } from "react-router-dom";
 // import About from './pages/About';
 // import Products from './pages/Product';
 //The component which are not required please use lazy
+//lazy loading is also known as chunking or code splitting
+/*code should be reuseable,modular,readable,testable****/
 const About = lazy(() => {
   return import("./pages/About");
 });

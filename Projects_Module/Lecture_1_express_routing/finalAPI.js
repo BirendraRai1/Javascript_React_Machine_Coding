@@ -20,7 +20,9 @@ const strContent = fs.readFileSync("./dev-data.json", "utf-8");
 let userDataStore;
 let isJsonString = (str) => {
   try {
-    JSON.parse(str);
+    JSON.parse(str); //function of JSON.parse
+    //The JSON.parse() static method parses a JSON string,
+    //constructing the JavaScript value or object described by the string
   } catch (e) {
     return false;
   }
@@ -164,6 +166,9 @@ app.delete("/api/user/:userId", function (req, res) {
   }
 });
 
+//The find() method returns the value of the first element that passes a test.
+//The find() method executes a function for each array element.
+//The find() method returns undefined if no elements are found
 function getUserByid(id) {
   const user = userDataStore.find((user) => {
     return user.id == id;

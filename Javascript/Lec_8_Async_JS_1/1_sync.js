@@ -20,11 +20,11 @@
 // console.log("Before");
 // // 3
 // function fn() {
-//     console.log("I am fn");
+//   console.log("I am fn");
 // }
-/**
- * setTimeout functions are known as asynchronous function.fn is the callback of setTimeout
- * ****/
+// /**
+//  * setTimeout functions are known as asynchronous function.fn is the callback of setTimeout
+//  * ****/
 // setTimeout(fn, 2000);
 // // 2
 // console.log("After");
@@ -66,16 +66,16 @@
 /****************Question**************************/
 //The timer attached to the setTimeout is the minimum time at which its callback will execute.
 //here the callback attached to the setTimeout will execute after 5 secs
-let a = true;
-console.log("Before");
+// let a = true;
+// console.log("Before");
 
-setTimeout(() => {
-  a = false;
-  console.log("I broke the while loop");
-}, 1000);
-console.log("After");
-let timeInfuture = Date.now() + 5000;
-while (Date.now() < timeInfuture) {}
+// setTimeout(() => {
+//   a = false;
+//   console.log("I broke the while loop");
+// }, 1000);
+// console.log("After");
+// let timeInfuture = Date.now() + 5000;
+// while (Date.now() < timeInfuture) {}
 
 /*************Question*************************/
 //Here the callback cb1 attached to setTimeout will execute after 6 seconds because of the nature of environment of the call stack
@@ -86,9 +86,12 @@ const cb2 = () => {
   while (Date.now() < timeInfuture) {}
 };
 const cb1 = () => console.log("hello");
+
 setTimeout(cb2, 1000);
 
+console.time();
 setTimeout(cb1, 2000);
+console.timeEnd();
 
 console.log("After");
 

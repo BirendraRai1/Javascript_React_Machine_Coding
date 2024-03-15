@@ -192,7 +192,7 @@
 // });
 
 /*************2.****************************************/
-// const fs = require("fs");
+const fs = require("fs");
 // //assuming f1 files is present and has content of I am F1
 // let rfIlePromise = fs.promises.readFile("f1.txt");
 // rfIlePromise.then(function (data) {
@@ -221,7 +221,7 @@
 // c first then returns promise.resolve
 // Promise.resolve("hey then")
 //   .then(function (data) {
-//     console.log("1 ", data);// 1 hey then
+//     console.log("1 ", data); // 1 hey then
 //     return Promise.resolve("i am resolved value returned by first then");
 //   })
 //   .then(function (data) {
@@ -242,7 +242,7 @@
 //a. first catch returns  a  value
 // Promise.reject("hey catch")
 //   .catch(function (data) {
-//     console.log("1 ", data);//1 hey catch
+//     console.log("1 ", data); //1 hey catch
 //     return 10;
 //   })
 //   .then(function (data) {
@@ -263,7 +263,7 @@
 // Promise.reject("hey catch")
 //   .catch(function (data) {
 //     console.log("1 ", data); // 1 hey catch
-//     return Promise.resolve("i am resolved value returned by first then");
+//     return Promise.resolve("i am resolved value returned by first catch");
 //   })
 //   .then(function (data) {
 //     console.log("2 " + data); // 2 i am resolved value returned by first then
@@ -386,7 +386,8 @@
 //     throw new Error("I am an error");
 //   })
 //   .catch((err) => {
-//     console.log(err.message); // I am an error
+//     console.log("came inside catch");
+//     console.log("err from catch", err.message); // I am an error
 //     return "from catch";
 //   });
 /**

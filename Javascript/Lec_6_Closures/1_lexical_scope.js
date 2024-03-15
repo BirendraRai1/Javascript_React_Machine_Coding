@@ -15,23 +15,23 @@
 
 // fn();
 
-window.varName = "win";
+// window.varName = "win";
 
-var varName = 10;
-var varName;
-// /**Here it is defination of function b*/
-function b() {
-  console.log("in b", varName);
-}
+// var varName = 10;
+// var varName;
+// // /**Here it is defination of function b*/
+// function b() {
+//   console.log("in b", varName);
+// }
 
-function fn() {
-  var varName = 20;
-  /**Here function b is called*/
-  b(); //in b 10
-  console.log(varName); //20
-}
+// function fn() {
+//   var varName = 20;
+//   /**Here function b is called*/
+//   b(); //in b 10
+//   console.log(varName); //20
+// }
 
-fn();
+// fn();
 
 /**
  * if you have the variable in the current scope you take from that scope and if it is not present in that scope it will take from outer scope

@@ -55,7 +55,7 @@ console.log("typeof myVar ", typeof myVar);
 console.log("typeof null", typeof null);
 
 // typeof array -> object
-//console.log(typeof [1, 2, 3, 4]);
+console.log(typeof [1, 2, 3, 4]);
 
 // correct way to check whether you are recieving array or object
 // let arr = [1, 2, 3, 4];

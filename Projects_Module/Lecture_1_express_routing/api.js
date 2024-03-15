@@ -65,6 +65,12 @@ app.post("/api/user", function (req, res) {
  * 1. req : object representing request
  * 2. res : object representing response
  * In layman app.use is basically a guy who tells that always use me
+ *
+ *
+ * what are callback functions
+ * Any function that is passed as an argument to another function
+ * so that it can be executed in that other function is called as
+ * a callback function
  * ** */
 
 /*app.use, app.get,app.post,all these are middleware

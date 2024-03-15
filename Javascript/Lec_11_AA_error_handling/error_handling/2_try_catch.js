@@ -13,15 +13,13 @@
 //         var a = 20;
 //         console.log("Hello", a);
 //     }
-// } catch (err) { 
+// } catch (err) {
 //     console.log("Error",err);
 // }
 
-
-
 /*****
  * runtime Error
- * 
+ *
  * *****/
 // console.log("Before");
 // try {
@@ -36,27 +34,25 @@
 /***try and catch are synchronous**/
 // console.log("Before");
 // try {
-//     setTimeout(() => {
-//         console.log("set timeout is executed");
-//         console.log(a);
-//     }, 1000);
+//   setTimeout(() => {
+//     console.log("set timeout is executed");
+//     console.log(a);
+//   }, 1000);
 // } catch (err) {
-//     console.log(" message: ", err.message);
-//     console.log("name of error: ", err.name);
+//   console.log(" message: ", err.message);
+//   console.log("name of error: ", err.name);
 // }
 // console.log("After try catch");
 /**********************correct way****************************/
 console.log("Before");
 setTimeout(() => {
-    try {
-        console.log("set timeout is executed");
-        console.log(a);
-    } catch (err) {
-        console.log(" message: ", err.message);
-        console.log("name of error: ", err.name);
-    }
-
+  try {
+    console.log("set timeout is executed");
+    console.log(a);
+  } catch (err) {
+    console.log(" message: ", err.message);
+    console.log("name of error: ", err.name);
+  }
 }, 1000);
-
 
 console.log("After try catch");

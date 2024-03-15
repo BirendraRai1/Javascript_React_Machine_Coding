@@ -1,12 +1,12 @@
 // let config = {
-//     appName: "scaler.com",
-//     database: {
-//         host: "127.0.0.1",
-//         name: "mainDb",
-//         user: "root",
-//         pwd: "admin"
-//     }
-// }
+//   appName: "scaler.com",
+//   database: {
+//     host: "127.0.0.1",
+//     name: "mainDb",
+//     user: "root",
+//     pwd: "admin",
+//   },
+// };
 
 /**
  * mutation/changes we can do on object ->
@@ -15,7 +15,7 @@
  * 4. You cannot remove and create .It can be done using Object.seal
  * 3. You cannot create , update , delete .It can be done using Object.freeze
  * **/
-// config=10;
+// config = 10;
 // console.log(config);
 
 // config.tempServer = "127.0.0.18";
@@ -26,14 +26,14 @@
 /*************The problem of Reassignment can be controlled using const variable****/
 /***with const only the address of object is freezed but not it's properties**/
 // const config = {
-//     appName: "scaler.com",
-//     database: {
-//         host: "127.0.0.1",
-//         name: "mainDb",
-//         user: "root",
-//         pwd: "admin"
-//     }
-// }
+//   appName: "scaler.com",
+//   database: {
+//     host: "127.0.0.1",
+//     name: "mainDb",
+//     user: "root",
+//     pwd: "admin",
+//   },
+// };
 
 // config = 10;
 // console.log(config);
@@ -68,7 +68,7 @@ notExtendableObj.database.newpwd = "fake";
 // // notExtendableObj.appName = "interviewbit.com";
 // // delete notExtendableObj.extra;
 console.log(config);
-// console.log(notExtendableObj);
+console.log(notExtendableObj);
 
 /*******
  * Object.seal:-It also works on the first level.You can update but not delete / add
@@ -85,7 +85,16 @@ console.log(config);
 //     extra: 10
 // }
 // let notExtendableObj = Object.seal(config);
-// notExtendableObj.database = Object.seal(notExtendableObj.database);
+// notExtendableObj.datconsole.log("config is ", config);
+let notExtendableObj = Object.preventExtensions(config);
+//notExtendableObj.database = Object.preventExtensions(notExtendableObj.database);
+notExtendableObj.tempServer = "127.0.0.18";
+notExtendableObj.database.newpwd = "fake";
+// // notExtendableObj.appName = "interviewbit.com";
+// // delete notExtendableObj.extra;
+console.log(config);
+console.log(notExtendableObj);
+abase = Object.seal(notExtendableObj.database);
 // notExtendableObj.tempServer = "127.0.0.18";
 // notExtendableObj.database.newpwd = "fake";
 // delete notExtendableObj.extra;

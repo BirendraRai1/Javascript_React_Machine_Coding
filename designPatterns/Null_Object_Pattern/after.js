@@ -2,7 +2,12 @@ function user(id, name) {
   this.id = id;
   this.name = name;
 
-  const hasAccess = () => {
+  // const hasAccess = () => {
+  //   return this.name === "Bob";
+  // };
+  // the wrong with above writing of code is
+  //you don't have to use this in front of function in case of classes but in the case of function constructor you have to use it
+  this.hasAccess = () => {
     return this.name === "Bob";
   };
 }
@@ -11,7 +16,10 @@ function nullUser() {
   this.id = -1;
   this.name = "Guest";
 
-  const hasAccess1 = () => {
+  // const hasAccess1 = () => {
+  //   return false;
+  // };
+  this.hasAccess = () => {
     return false;
   };
 }
@@ -26,7 +34,6 @@ function getUser(id) {
   if (user == null) {
     return new nullUser();
   } else {
-    console.log("user is ", user);
     return user;
   }
 }
@@ -42,4 +49,18 @@ function printUser(id) {
   }
 }
 
-printUser(1);
+//printUser(1);
+/*
+Hello Bob
+You have access
+****/
+//printUser(2);
+/*
+Hello John
+You are not allowed here
+*****/
+printUser(3);
+/*
+Hello Guest
+You are not allowed here
+*****/
