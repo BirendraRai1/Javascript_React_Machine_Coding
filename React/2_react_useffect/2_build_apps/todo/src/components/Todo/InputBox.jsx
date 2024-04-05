@@ -7,7 +7,9 @@ function InputBox(props) {
     setValue(e.target.value);
   };
   const addTaskChild = () => {
-    //Here InputBox receives addTask as props and when it wants to talk to ToDo it will call addTask function and give inputValue as data and then ToDo will take away from there
+    //Here InputBox receives addTask as props and when it wants to talk to
+    //ToDo it will call addTask function and give inputValue as data and then
+    //ToDo will take away from there
     addTask(inputValue);
     setValue("");
   };

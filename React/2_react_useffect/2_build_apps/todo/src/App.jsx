@@ -7,11 +7,11 @@ import UseEffectExamples from "./components/useEffectExamples/UseEffectExamples"
 
 function App() {
   return (
-    // <Todo></Todo>
-    // <GetData></GetData>
+    <Todo></Todo>
+    //<GetData></GetData>
     // <UseEffectExamples></UseEffectExamples>
-    <UseEffectCleanup></UseEffectCleanup>
-    // <ResizeAwareComponent></ResizeAwareComponent>
+    //<UseEffectCleanup></UseEffectCleanup>
+    //<ResizeAwareComponent></ResizeAwareComponent>
   );
 }
 

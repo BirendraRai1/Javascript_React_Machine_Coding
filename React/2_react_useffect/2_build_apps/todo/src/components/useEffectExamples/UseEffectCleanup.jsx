@@ -114,6 +114,10 @@ export default UseEffectCleanup;
  *          cleanup -> before next Useffect call
  *          usecase : Resizing of window
  * 
+ * 
+ * The cleanup function is a function that is called when the component 
+ * is unmounted (i.e., when it is no longer being rendered)
+ * 
  
  * */
 

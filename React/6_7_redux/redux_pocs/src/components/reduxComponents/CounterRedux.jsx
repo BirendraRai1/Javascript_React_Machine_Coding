@@ -10,7 +10,7 @@ function Counter() {
   //const {count} = useSelector((store)=>store.counterState)
 
   // This is used to call any method from the reducer.Updation of state will be done by the dispatch
-  const dispatch = useDispatch(); //this is the shop owner dispatch
+  const dispatch = useDispatch(); //this is the shop owner dispatch .It is a hook coming from react-redux
   const handleIncrement = () => {
     console.log("increment will happen");
     // here it is used
