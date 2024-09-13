@@ -1,0 +1,67 @@
+<!-- Write a JavaScript program to display a random image (clicking on a button) from the following list -->
+<!-- Declaration of HTML document type -->
+<!DOCTYPE html>
+<!-- Start of HTML document -->
+<html>
+  <head>
+    <!-- Declaring character encoding -->
+    <meta charset="utf-8" />
+    <!-- Setting title of the document -->
+    <title>Display a random image.</title>
+    <!-- Internal CSS styling -->
+    <style type="text/css">
+      /* Styling body to have margin at the top */
+      body {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <!-- Start of body section -->
+  <body>
+    <!-- Division containing a button triggering the display_random_image function on click -->
+    <div style="flex-direction: row;justify-content: center;align-items: center;">
+      <button id="jsstyle" onclick="display_random_image();">Show Image</button>
+    </div>
+    <!-- End of body section -->
+     <script>
+        function display_random_image(){
+            let theImages = [{
+                        src: "http://farm4.staticflickr.com/3691/11268502654_f28f05966c_m.jpg",
+                        width: "240",
+                        height: "160"
+                    }, {
+                        src: "http://farm1.staticflickr.com/33/45336904_1aef569b30_n.jpg",
+                        width: "320",
+                        height: "195"
+                    }, {
+                        src: "http://farm6.staticflickr.com/5211/5384592886_80a512e2c9.jpg",
+                        width: "500",
+                        height: "343"
+            }];
+            let preBuffer = []
+            for(let i=0;i<theImages.length;i++){
+                preBuffer[i] = new Image()
+                preBuffer[i].src = theImages[i].src
+                preBuffer[i].width = theImages[i].width
+                preBuffer[i].height = theImages[i].height
+            }
+            function getRandomInt(min,max){
+                let imn = Math.floor(Math.random()*(max-min+1))+min
+                console.log("imn is",imn)
+                return preBuffer[imn]
+            }
+            let newImage = getRandomInt(0,preBuffer.length-1)
+            let images = document.getElementsByTagName("img")
+            let l = images.length
+            for(let i=0;i<images.length;i++){
+                images[0].parentNode.removeChild(images[0])
+            }
+            document.body.appendChild(newImage)
+        }
+     </script>
+  </body>
+  <!-- End of HTML document -->
+</html>
+
+
+<!-- good question -->

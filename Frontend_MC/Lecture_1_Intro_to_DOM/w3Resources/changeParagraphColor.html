@@ -1,0 +1,37 @@
+<!-- Write a JavaScript program to set paragraph background color. -->
+
+<!-- Declaration of HTML document type -->
+<!DOCTYPE html>
+<!-- Start of HTML document -->
+<html>
+  <!-- Start of head section -->
+  <head>
+    <!-- Declaring character encoding -->
+    <meta charset="utf-8" />
+    <!-- Setting title of the document -->
+    <title>Set the background color of a paragraph</title>
+  </head>
+  <!-- Start of body section -->
+  <body>
+    <!-- Button element triggering the set_background function on click -->
+    <input
+      type="button"
+      value="Click to set paragraph background color"
+      onclick="set_background()"
+    />
+    <!-- First paragraph element -->
+    <p>w3resource JavaScript Exercises</p>
+    <!-- Second paragraph element -->
+    <p>w3resource PHP Exercises</p>
+    <!-- End of body section -->
+     <script>
+        function set_background(){
+            let p = document.querySelectorAll("p")
+            p.forEach((elem)=>{
+                elem.style.background="red"
+            })
+        }
+     </script>
+  </body>
+  <!-- End of HTML document -->
+</html>

@@ -40,9 +40,9 @@
     <script>
       /**************content****************/
       let div = document.querySelector("div");
-      console.log("innerHtml", div.innerHTML); //output will be all the children nodes
+      //console.log("innerHtml", div.innerHTML); //output will be all the children nodes
       // visible text
-      console.log("innerText", div.innerText); //output will be the text content inside all the children nodes
+     //console.log("innerText", div.innerText); //output will be the text content inside all the children nodes
       // console.log("````````````````````");
       // //  It gives all the text inside an element even if it is hidden
       //console.log("textcontent", div.textContent);
@@ -54,12 +54,13 @@
        * *******/
 
       /***************styling**************************/
-      div.style.backgroundColor = "lightyellow";
-      div.style.color = "red";
+      //div.style.backgroundColor = "lightyellow";
+      //div.style.color = "red";
       /******************attribute****************************/
       const idName = div.getAttribute("id");
       console.log(idName);
       const input = document.getElementById("special");
+      console.log("input is",input)
       const type = input.getAttribute("type");
       input.setAttribute("type", "email");
       console.log(type);

@@ -1,0 +1,57 @@
+<!-- Declaration of HTML document type -->
+<!DOCTYPE html>
+<!-- Start of HTML document -->
+<html lang="en">
+  <head>
+    <!-- Declaring character encoding -->
+    <meta charset="utf-8" />
+    <!-- Setting title of the document -->
+    <title>Volume of a Sphere</title>
+    <!-- Internal CSS styling -->
+    <style>
+      /* Styling body to have padding at the top */
+      body {
+        padding-top: 30px;
+      }
+      /* Styling label and input elements to display as block */
+      label,
+      input {
+        display: block;
+      }
+    </style>
+  </head>
+  <!-- Start of body section -->
+  <body>
+    <!-- Paragraph explaining the purpose of the form -->
+    <p>Input radius value and get the volume of a sphere.</p>
+    <!-- Form for inputting radius and displaying volume -->
+    <form action="" method="post" id="MyForm">
+      <!-- Label and input field for entering radius -->
+      <label for="radius">Radius</label
+      ><input type="text" name="radius" id="radius" required />
+      <!-- Label and input field for displaying volume -->
+      <label for="volume">Volume</label
+      ><input type="text" name="volume" id="volume" />
+      <!-- Submit button for calculating volume -->
+      <input type="submit" value="Calculate" id="submit" />
+    </form>
+    <!-- End of body section -->
+     <script>
+        function calculateVolume(event){
+            event.preventDefault()
+            let radius = document.getElementById("radius").value
+            radius = parseInt(radius)
+            if(radius<0 || isNaN(radius)){
+                alert(`Please enter the correct value of radius`)
+            }
+            let volume = document.getElementById("volume")
+            console.log("volume is",volume)
+            volume.value = ((4/3)*Math.PI*Math.pow(radius,3)).toFixed(4)
+        }
+        window.onload = function(){
+            document.getElementById("MyForm").onsubmit = calculateVolume
+        }
+     </script>
+  </body>
+  <!-- End of HTML document -->
+</html>

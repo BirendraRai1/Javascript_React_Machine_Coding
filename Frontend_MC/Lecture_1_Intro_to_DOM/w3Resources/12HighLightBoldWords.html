@@ -1,0 +1,48 @@
+<!-- Write a JavaScript program to highlight the bold words of the following paragraph, on mouse over a certain link. -->
+<!-- Declaration of HTML document type -->
+<!DOCTYPE html>
+<!-- Start of HTML document -->
+<html>
+  <!-- Start of head section -->
+  <head>
+    <!-- Declaring character encoding -->
+    <meta charset="UTF-8" />
+    <!-- Setting title of the document -->
+    <title>Get And Style All Tags</title>
+    <!-- End of head section -->
+  </head>
+  <!-- Start of body section -->
+  <body>
+    <!-- Paragraph containing a link -->
+    <p>
+      <a href="#" onMouseOver="highlight()" onMouseOut="return_normal()"
+        >On mouse over here bold words of the following paragraph will be
+        highlighted</a
+      >
+    </p>
+    <!-- Paragraph with strong tags -->
+    <p>
+      <strong>We</strong> have just started <strong>this</strong> section for
+      the users (<strong>beginner</strong> to intermediate) who
+      <strong>want</strong> to work with <strong>various</strong> JavaScript
+      <strong>problems</strong> and write scripts online to
+      <strong>test</strong> their JavaScript <strong>skill</strong>.
+    </p>
+    <!-- End of body section -->
+     <script>
+        let boldWords = document.querySelectorAll("strong")
+        function highlight(){
+            boldWords.forEach((item)=>{
+                item.style.color = 'green'
+            })
+        }
+
+        function return_normal(){
+            boldWords.forEach((item)=>{
+                item.style.color = 'black'
+            })
+        }
+     </script>
+  </body>
+  <!-- End of HTML document -->
+</html>
