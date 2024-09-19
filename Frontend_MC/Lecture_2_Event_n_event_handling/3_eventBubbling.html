@@ -62,46 +62,46 @@
       const innerBox = document.querySelector("#inner_box");
       const button = document.querySelector("#button");
 
-      document.addEventListener("DOMContentLoaded", function () {
-        button.addEventListener("click", (e) => {
-          console.log(
-            "Button was clicked",
-            e.target,
-            "ctarget",
-            e.currentTarget
-          );
-        });
-      });
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   button.addEventListener("click", (e) => {
+      //     console.log(
+      //       "Button was clicked",
+      //       e.target,
+      //       "ctarget",
+      //       e.currentTarget
+      //     );
+      //   });
+      // });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        innerBox.addEventListener("click", (e) => {
-          console.log(
-            "innerBox was clicked",
-            e.target,
-            "ctarget",
-            e.currentTarget
-          );
-          //e.stopPropagation(); //e.stopPropagation stops the propagation on innerBox while e.stopImmediatePropagation() stops the propagation here itself only
-          e.stopImmediatePropagation();
-        });
-      });
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   innerBox.addEventListener("click", (e) => {
+      //     console.log(
+      //       "innerBox was clicked",
+      //       e.target,
+      //       "ctarget",
+      //       e.currentTarget
+      //     )
+      //     //e.stopPropagation(); //e.stopPropagation stops the propagation on innerBox while e.stopImmediatePropagation() stops the propagation here itself only
+      //     //e.stopImmediatePropagation();
+      //   });
+      // });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        innerBox.addEventListener("click", (e) => {
-          console.log("innerBox was  next handler");
-        });
-      });
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   innerBox.addEventListener("click", (e) => {
+      //     console.log("innerBox was  next handler");
+      //   });
+      // });
 
-      document.addEventListener("DOMContentLoaded", function () {
-        outerBox.addEventListener("click", (e) => {
-          console.log(
-            "outerBox was clicked",
-            e.target,
-            "ctarget",
-            e.currentTarget
-          );
-        });
-      });
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   outerBox.addEventListener("click", (e) => {
+      //     console.log(
+      //       "outerBox was clicked",
+      //       e.target,
+      //       "ctarget",
+      //       e.currentTarget
+      //     );
+      //   });
+      //});
 
       document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener("click", (e) => {

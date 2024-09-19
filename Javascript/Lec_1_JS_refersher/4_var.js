@@ -22,14 +22,14 @@
 // var a = 10;
 // a = 20;
 // console.log("before redeclaration ", a);
-// redeclared -> yes
+// //redeclared -> yes
 // var a = 30;
 
-// udef
-//console.log("after redeclaration ", a);
+// // udef
+// console.log("after redeclaration ", a);
 
 // var a=10;
-// 10
+// //10
 // console.log(a);
 
 // **********let*************

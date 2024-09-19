@@ -1,0 +1,62 @@
+<!-- Write a JavaScript program to create a dropdown menu that shows and hides its options when clicked. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <style>
+    .dropdown{
+        position: relative;
+        display:inline-block
+    }
+    .dropdown-button {
+      background-color:#7FFFD4;
+      color: #333;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .dropdown-options {
+      display: none;
+      position: absolute;
+      background-color: #CC56FF;
+      min-width: 120px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      z-index: 1;
+    }
+    .dropdown-option {
+      padding: 10px;
+      cursor: pointer;
+      border-bottom: 1px solid #ccc;
+    }
+    .dropdown-option:last-child {
+      border-bottom: none;
+    }
+ </style>
+ <body>
+    <div class="dropdown">
+        <button class="dropdown-button">Select a Subject</button>
+        <ul id="dropdown-options" class="dropdown-options">
+            <li class="dropdown-option">Mathematics</li>
+            <li class="dropdown-option">English</li>
+            <li class="dropdown-option">Physics</li>
+        </ul>
+    </div>
+ </body>
+ <script>
+    let button = document.querySelector(".dropdown-button")
+    button.addEventListener("click",(e)=>{
+        let ul = document.querySelector(".dropdown-options")
+        console.log("ul.style.display",ul.style.display)
+        ul.style.display = ul.style.display =="none"?"block":"none"
+    })
+ </script>
+
+ </html>
+
+ <!-- https://www.w3resource.com/javascript-exercises/event/index.php -->

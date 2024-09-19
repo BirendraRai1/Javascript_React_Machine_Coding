@@ -36,6 +36,7 @@ let saveTimeLeft;
 startBtn.addEventListener("click", function () {
   // 3 things ->
   // 1. taking the input
+  //When you assign hrsinput, minsinput, and secsinput initially, they refer to the DOM elements. Later, when you reassign them in the startBtn click handler instead of hrs,mins,secs, you're changing their values to integers, which breaks the reference to the original DOM elements.
   let mins = minInput.value || 0;
   let hrs = hrsInput.value || 0;
   let secs = secInput.value || 0;
@@ -86,7 +87,7 @@ resetBtn.addEventListener("click", function () {
   minInput.value = "00";
   secInput.value = "00";
   hrsInput.value = "00";
-  // reste process
+  // reset process
   saveTimeLeft = 0;
   clearInterval(counterID);
   startBtn.style.display = "block";

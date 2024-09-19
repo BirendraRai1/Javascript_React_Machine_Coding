@@ -42,12 +42,12 @@ console.log("typeof myVar ", typeof myVar);
 
 // ***********typeof Operator***********************
 
-// var a = 10;
-// console.log("55", typeof a);
-// a = "string";
-// console.log("57", typeof a);
-// a = { name: "Jasbir" };
-// console.log("59", typeof a);
+var a = 10;
+console.log("55", typeof a);
+a = "string";
+console.log("57", typeof a);
+a = { name: "Jasbir" };
+console.log("59", typeof a);
 
 // // Fact-2 : JS -> just 10days -> netscape
 

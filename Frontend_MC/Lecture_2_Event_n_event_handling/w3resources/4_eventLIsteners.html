@@ -1,0 +1,58 @@
+<!-- Write a JavaScript program that implements a "form" validation that displays an error message if a required field is left empty when submitting the form -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <style>
+    .error-message {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+  <body>
+    <form id="myForm" novalidate>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <br />
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+    <div id="errorMessages"></div>
+    <script>
+      let form = document.getElementById("myForm");
+      let errorMessage = document.getElementById("errorMessages");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        errorMessage.innerHTML = ""; // Clear previous error messages
+        let requiredFields = form.querySelectorAll("[required]");
+        let hasError = false; // Track if any field is empty
+
+        requiredFields.forEach((field) => {
+          if (field.value.trim() === "") {
+            const fieldName = field.getAttribute("name");
+            let p = document.createElement("p");
+            p.innerText = `${fieldName} is required`;
+            errorMessage.appendChild(p);
+            hasError = true;
+          }
+        });
+        // Only submit the form if no errors were found
+        if (!hasError) {
+          form.submit();
+        }
+      });
+    </script>
+  </body>
+</html>
+<!-- novalidate attribute: This disables the browser's built-in validation, allowing your JavaScript to handle it -->
+<!-- JavaScript validation logic: If all fields are valid, the form will be submitted programmatically using form.submit().
+ -->

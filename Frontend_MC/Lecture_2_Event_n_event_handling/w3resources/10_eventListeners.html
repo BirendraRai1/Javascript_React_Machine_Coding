@@ -1,0 +1,25 @@
+<!-- Write a JavaScript function that listens for a double click on an element and performs a specific action. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Event</title>
+    <style>
+        div{
+            width: 12rem;
+            height:12rem;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let div = document.querySelector("div")
+        div.addEventListener("dblclick",(e)=>{
+            e.target.style.backgroundColor = "red"
+        })
+    </script>
+</body>
+</html>

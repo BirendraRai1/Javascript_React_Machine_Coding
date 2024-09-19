@@ -1,0 +1,30 @@
+<!-- Write a JavaScript program to implement drag-and-drop functionality to allow users to reorder items in a list.
+
+ -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .drag-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .drag-item {
+        background-color: #cc56ff;
+        padding: 10px;
+        margin-bottom: 5px;
+        cursor: move;
+      }
+    </style>
+  </head>
+  <body>
+    <ul id="dragList" class="drag-list">
+      <li class="drag-item" draggable="true">Mobile</li>
+      <li class="drag-item" draggable="true">Laptop</li>
+      <li class="drag-item" draggable="true">Desktop</li>
+      <li class="drag-item" draggable="true">Television</li>
+      <li class="drag-item" draggable="true">Radio</li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!-- Write a JavaScript function that changes the background color of an element when a mouse enters it. -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <style>
+    div{
+        height:12rem;
+        width:10rem;
+        border: 1px solid black ;
+    }
+ </style>
+ <body>
+    <div></div>
+    <script>
+        let div = document.querySelector("div")
+        div.addEventListener("mouseover",(e)=>{
+            console.log("e.target is",e.target)
+            e.target.style.backgroundColor = "red"
+        })
+        div.addEventListener("mouseleave",(e)=>{
+            e.target.style.backgroundColor = "white"
+        })
+    </script>
+ </body>
+ </html>
