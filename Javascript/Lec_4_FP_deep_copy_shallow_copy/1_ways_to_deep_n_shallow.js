@@ -27,8 +27,9 @@
 // let arr = [1, 2, 3, 4, [10, 12], 5, 6];
 // let spreadArray = [...arr];
 // spreadArray[2] = 100;
-// //spreadArray[4] = 200;
 // spreadArray[4][1] = 300;
+// spreadArray[4] = 200;
+
 // console.log("outputs ", spreadArray, arr);
 
 /**Object.assign**/
@@ -46,6 +47,8 @@
 // let obj1 = {
 //   hobbies: "criket",
 //   movie: "govinda",
+//   firstName: "Biru",
+//   lastName: "Rai",
 // };
 
 ////The Object.assign() method is used to copy the values and properties from one or more source
@@ -68,19 +71,19 @@
  *
  * */
 
-// let person = {
-//   firstName: "John",
-//   lastName: "Doe",
-//   address: {
-//     street: "North 1st street",
-//     city: "San Jose",
-//     state: "CA",
-//     country: "USA",
-//   },
-// };
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+  address: {
+    street: "North 1st street",
+    city: "San Jose",
+    state: "CA",
+    country: "USA",
+  },
+};
 // // // // convert obj to string
-// let stringSyntaxOfobject = JSON.stringify(person);
-// console.log(typeof stringSyntaxOfobject, stringSyntaxOfobject);
+let stringSyntaxOfobject = JSON.stringify(person);
+console.log(typeof stringSyntaxOfobject, stringSyntaxOfobject);
 // /**deep copy -> object like string*/
 //a deep copy shares no references with its source object, any changes made to the deep copy do not affect the source object.
 

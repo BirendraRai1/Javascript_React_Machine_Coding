@@ -32,9 +32,16 @@
             /* shorthand for above 2  */
             /* grid-template: repeat(5, 1fr)/repeat(5, 1fr); */
 
-            /*  to move every element in a certain */
+            /*  to move every element in a certain way*/
             align-items: center;
             justify-items: center;
+
+            /* to move the whole grid vertically and horizontally center we need to not give 
+            grid-template-rows and grid-template-columns fractional values instead we need to give pixel values
+            justify-content:center
+            align-content:center
+            */
+
         }
 
         /* vehicle */
@@ -64,10 +71,12 @@
 
         .item-second {
             background-color: lightblue;
-            grid-row: 2/4;
+            /* grid-row-start/grid-row-end */
+            grid-row: 2/4; 
             grid-column: 1/2;
-            /* justify-self:flex-end ; */
-            /* align-self: center; */
+            justify-self:flex-end; 
+            align-self: center;
+            height:200px
         }
     </style>
 </head>
@@ -75,7 +84,7 @@
 <body>
     <div class="container">
         <div class="item-first">Item One </div>
-        <div class="item-second">Item One </div>
+        <div class="item-second">Item Second </div>
     </div>
 </body>
 

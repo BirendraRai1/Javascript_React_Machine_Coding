@@ -25,7 +25,7 @@
 // arr2[2] = 200;
 // console.log("contest arr", arr);
 
-// let arr = [1, 2, [3, 4], 4, 5];
+//let arr = [1, 2, [3, 4], 4, 5];
 
 // // spread copies value or refrence from one array or object to another array or object only for the first level
 // let arr2 = [...arr];
@@ -36,8 +36,11 @@
 // let arr2 = [...arr];
 // //[value, value, ref, value, value];
 // arr2[2][0] = 200;
-// arr2[2] = 100;
-// console.log("orginal arr", arr, "updated array", arr2);
+// Since arr2[2] refers to the same nested array [3, 4] from arr, modifying arr2[2][0]
+// (the first element of the sub-array) also affects arr[2]. So both arr[2] and arr2[2] 
+// will become [200, 4].
+//arr2[2] = 100;
+//console.log("orginal arr", arr, "updated array", arr2);
 
 // let a=10;
 // //copied value -> primitive types

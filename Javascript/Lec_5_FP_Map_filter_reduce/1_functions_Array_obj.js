@@ -50,37 +50,37 @@
  *            you can pass a fn as a parameter
  * */
 
-// function fn(param) {
-//   console.log("param is ", param); //[Function: param]
-//   const rValue = param();
-//   console.log("rValue is ", rValue);
-//   return "From outer fn";
-// }
+function fn(param) {
+  console.log("param is ", param); //[Function: param]
+  const rValue = param();
+  console.log("rValue is ", rValue);
+  return "From outer fn";
+}
 // fn("Hello");
 // fn([1, 2, 3, 4]);
 // fn({ name: "Jasbir" });
-// const outerFnRVal = fn(smaller);
-// console.log(outerFnRVal);
-// function smaller() {
-//   console.log(" I am smaller");
-//   return "hello";
-// }
+const outerFnRVal = fn(smaller);
+console.log(outerFnRVal);
+function smaller() {
+  console.log(" I am smaller");
+  return "hello";
+}
 
 /**
  * variables ->variables can be returned
  *          -> fn can also be returned from a function
  * */
 
-function fn() {
-  console.log(" I am fn I am returning a fn"); //1
-  return function inner() {
-    console.log("Returned from fn"); //2
-  };
-}
-const Rval = fn();
-// // console.log("Rval",Rval);
-// //console.log("Rval is " + Rval);
-console.log("Rval", Rval()); //3
+// function fn() {
+//   console.log(" I am fn I am returning a fn"); //1
+//   return function inner() {
+//     console.log("Returned from fn"); //2
+//   };
+// }
+// const Rval = fn();
+// // // console.log("Rval",Rval);
+// // //console.log("Rval is " + Rval);
+// console.log("Rval", Rval()); //3
 
 /**
  * functions are object . We can add properties or methods to it

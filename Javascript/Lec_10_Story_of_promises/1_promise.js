@@ -13,10 +13,9 @@ const promise = fs.promises.readFile("./f1.txt");
 /**
  * initially it print the state of the promise i.e.pending at time of submission only
  * */
-console.log(promise);
+console.log("initial state of promise",promise);
 console.log("After");
 
 setTimeout(() => {
-  console.log("i after file read");
-  console.log(promise);
+  console.log("i after file read"+promise);
 }, 2000);

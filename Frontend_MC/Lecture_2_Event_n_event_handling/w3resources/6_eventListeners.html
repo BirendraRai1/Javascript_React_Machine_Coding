@@ -26,5 +26,22 @@
       <li class="drag-item" draggable="true">Television</li>
       <li class="drag-item" draggable="true">Radio</li>
     </ul>
+    <script>
+      const dragList = document.getElementById("dragList");
+      let draggedItem = null;
+      dragList.addEventListener("dragstart", handleDragStart);
+      dragList.addEventListener("dragover",handleDragOver);
+
+      function handleDragStart(e) {
+        console.log("event is", e);
+        draggedItem = e.target
+        e.dataTransfer.effectAllowed = 'move'
+        e.dataTransfer.setData('text/html',draggedItem.innerHTML)
+        e.target.style.opacity = '0.5'
+      }
+      function handleDragOver(e){
+        
+      }
+    </script>
   </body>
 </html>
