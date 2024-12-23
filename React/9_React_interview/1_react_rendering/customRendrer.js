@@ -52,50 +52,49 @@ const obj = {
  * </div >
  * */
 
-function render(obj) {
-  let element;
-  // if your type is string then it is normal element
+// 
 
-  if (typeof obj.type === "string") {
-    element = document.createElement(obj.type);
+function render(vDOM) {
+  const { type, props } = vDOM;
+
+  // Handle functional components
+  if (typeof type === "function") {
+    const dynamicVDOM = type(props); // Evaluate the functional component
+    return render(dynamicVDOM); // Recursively render the resulting virtual DOM
   }
-  // if you have custom component then call that fn with props
 
-  if (typeof obj.type === "function") {
-    const props = obj["props"];
-    console.log("props inside the object function ", props);
-
-    let elementObj = obj.type(props);
-    console.log("elementObj inside the function ", elementObj);
-    return render(elementObj);
+  // Handle text nodes
+  if (isTextNode(vDOM)) {
+    return document.createTextNode(vDOM);
   }
-  const props = obj.props;
 
-  for (let prop in props) {
-    if (prop == "children") {
-      const children = props[prop];
-      let isArray = Array.isArray(children);
-      console.log("isArray ", isArray);
-      if (isArray) {
-        for (let i = 0; i < children.length; i++) {
-          const innerChild = children[i];
-          if (typeof innerChild == "string") {
-            const textNode = document.createTextNode(innerChild);
-            element.appendChild(textNode);
-          } else {
-            const childElem = render(innerChild);
-            element.appendChild(childElem);
-          }
-        }
-      } else {
-        const textNode = document.createTextNode(props[prop]);
-        element.appendChild(textNode);
-      }
-    } else if (typeof props[prop] == "string") {
-      element.setAttribute(prop, props[prop]);
-    }
+  // Create the DOM element
+  const root = document.createElement(type);
+
+  // Destructure props
+  const { children, ...restProps } = props || {};
+
+  // Set attributes
+  for (let attr in restProps) {
+    root.setAttribute(attr, restProps[attr]);
   }
-  return element;
+
+  // Render children recursively
+  if (Array.isArray(children)) {
+    children.forEach((child) => {
+      const element = render(child);
+      root.appendChild(element);
+    });
+  } else if (children) {
+    root.appendChild(render(children));
+  }
+
+  return root;
+}
+
+function isTextNode(vDOM) {
+  //return typeof vDOM === "string" || typeof vDOM === "number";
+  return typeof vDOM !='object'
 }
 
 document.addEventListener("DOMContentLoaded", function () {

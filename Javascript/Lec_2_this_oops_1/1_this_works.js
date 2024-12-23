@@ -239,17 +239,17 @@
 // obj.regularMethod();
 // obj.arrowMethod(); //The arrow function callback inside asynchronous setTimeout is called inside the arrowmethod method so it takes from this here
 
-// const obj5 = {
-//   value: 42,
-//   regularMethod: function () {
-//     setTimeout(function () {
-//       console.log("Regular method's this", this.value);
-//     }, 1000);
-//   },
-//   arrowMethod: setTimeout(() => {
-//     console.log("Arrow method's this", this.value);
-//   }, 1000),
-// };
+const obj5 = {
+  value: 42,
+  regularMethod: function () {
+    setTimeout(function () {
+      console.log("Regular method's this", this.value);
+    }, 1000);
+  },
+  arrowMethod: setTimeout(() => {
+    console.log("Arrow method's this", this.value);
+  }, 1000),
+};
 //output
 //Arrow method's this undefined
 

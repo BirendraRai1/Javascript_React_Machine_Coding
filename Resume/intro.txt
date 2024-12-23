@@ -17,3 +17,18 @@ Thank you for considering me, and I look forward to discussing how I can contrib
 
 Built an e-commerce platform using React, Node.js and MongoDB for the database. Integrated payment functionality with Stripe API.
 Discuss the challenges - Clearly list the challenge and solution like “Resolved deployment issues by containerizing React frontend and Node.js backend with Docker
+
+
+
+"Seasoned MERN stack developer with 8 years of hands-on experience in building and scaling 
+web applications. I have a strong background in full-stack JavaScript development, including
+ MongoDB, Express, React, and Node.js, which I've leveraged to deliver high-quality solutions 
+ in various B2B and B2C sectors. Skilled in architecting efficient, scalable backend APIs, 
+ creating responsive front-end UIs, and optimizing overall application performance, I thrive 
+ in collaborative and fast-paced startup environments.
+
+Known for my problem-solving skills and ability to lead cross-functional teams, 
+I’ve successfully driven projects from concept to deployment, prioritizing clean code and 
+user-centered design. I am passionate about continuous learning and keeping up with the 
+latest industry trends, especially in microservices. 
+I’m excited to bring my experience to new challenges in impactful, growth-focused roles."

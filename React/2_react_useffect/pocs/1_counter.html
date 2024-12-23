@@ -87,3 +87,38 @@
     2.Add all the required eventListeners and handler function
     3.To add state 
 -->
+
+
+<!-- Using onClick={() => increment()} (arrow function):
+javascript
+Copy code
+<button onClick={() => increment()}>+</button>
+Here, an arrow function is created every time the button is rendered.
+The arrow function calls increment() directly, meaning increment executes immediately when 
+the button is clicked.
+This method is often used when you need to pass parameters to the function. For example, 
+if increment accepted a value, you could write onClick={() => increment(value)}.
+2. Using onClick={increment} (function reference):
+javascript
+Copy code
+<button onClick={increment}>+</button>
+Here, the increment function is directly assigned to onClick as a function reference.
+This approach does not create a new function each time the component renders, making 
+it more efficient.
+It’s ideal when the function doesn’t need additional arguments or context to run.
+Key Differences:
+Performance:
+
+The function reference (onClick={increment}) is generally more performant because it 
+doesn’t create a new function on each render.
+Arrow functions (onClick={() => increment()}) create a new function every time the 
+component re-renders, which may cause unnecessary re-renders or performance issues in larger 
+components.
+Usage:
+
+Use onClick={() => increment()} when you need to pass arguments or modify context within 
+the function.
+Use onClick={increment} when you want a direct function call without extra parameters or 
+context.
+In this example, since no parameters are required, the direct function reference 
+(onClick={increment}) is often preferable for simplicity and performance. -->

@@ -9,22 +9,13 @@ let input = [1, 2, 3, [4, 5], [6, 7, 8, [9, 10, 11]]];
 function flatten(srcArr) {
   let newArr = [];
   for (let i = 0; i < srcArr.length; i++) {
-    // check if elemnt -> array ->
-    let elem = srcArr[i];
-    let isElemArr = Array.isArray(elem);
-    if (isElemArr) {
-      // flatten it again
-      let smalleFlattenArr = flatten(elem);
-      console.log("smalleFlattenArr is", smalleFlattenArr);
-      //newArr.push(...smalleFlattenArr);
-      newArr = [...newArr, ...smalleFlattenArr];
-      //console.log("new arr inside if ", newArr);
-    } else {
-      //push it to newArr;
-      //newArr.push(elem);
-      newArr = [...newArr, elem];
-      //console.log("new arr inside else ", newArr);
-    }
+      if(Array.isArray(srcArr[i])){
+        let flattenArr = flatten(srcArr[i])
+        newArr = [...newArr,...flattenArr]
+      }
+      else{
+        newArr = [...newArr,srcArr[i]]
+      }
   }
   return newArr;
 }

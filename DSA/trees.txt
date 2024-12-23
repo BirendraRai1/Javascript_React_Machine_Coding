@@ -1,0 +1,12 @@
+Q>Given a binary tree, where every node value is a number. Find the sum of all the numbers that are formed from root to leaf paths. The formation of the numbers would be like 10*parent + current (see the examples for more clarification).
+solution>class Solution {
+    treePathsSum(node,currentSum =0) {
+        // code here
+        if(node ==null)
+            return 0
+        currentSum = currentSum*10+node.key
+        if(node.left==null && node.right==null)
+            return currentSum
+        return this.treePathsSum(node.left,currentSum)+this.treePathsSum(node.right,currentSum)
+    }
+}

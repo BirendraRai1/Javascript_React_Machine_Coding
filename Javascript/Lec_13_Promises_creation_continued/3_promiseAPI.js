@@ -54,7 +54,7 @@ function CustomPromise(executorFn) {
     //for function constructor this refers to current object
     if (state === RESOLVED) {
       console.log("line 48 resolved");
-      cb();
+      cb(value);
     } else {
       console.log("entered line 51", scbArr);
       console.log("cb is",cb)

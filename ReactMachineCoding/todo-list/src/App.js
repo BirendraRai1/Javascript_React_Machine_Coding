@@ -38,9 +38,10 @@ function App() {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button onClick={handleSubmit}>Add List</button>
+      <ul>
       {taskArr.map((task, id) => {
         return (
-          <ul>
+          
             <li key={id}>
               {editingTaskId == id ? (
                 <>
@@ -59,9 +60,9 @@ function App() {
               <button onClick={() => setEditingTaskId(id)}>Edit</button>
               <button onClick={() => deleteTask(id)}>Delete</button>
             </li>
-          </ul>
         );
       })}
+       </ul>
     </div>
   );
 }
